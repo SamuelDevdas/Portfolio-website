@@ -205,11 +205,11 @@ def main():
         content = load_yaml_content(yaml_filename)
         
         # Read HTML file - handle both running from project root and data folder
-        html_file = Path("website-samuel-portfolio.html")
+        html_file = Path("index.html")
         if not html_file.exists():
-            html_file = Path("../website-samuel-portfolio.html")
+            html_file = Path("../index.html")
         if not html_file.exists():
-            raise FileNotFoundError("website-samuel-portfolio.html not found")
+            raise FileNotFoundError("index.html not found")
         
         with open(html_file, 'r', encoding='utf-8') as f:
             html_content = f.read()
@@ -249,7 +249,7 @@ def main():
         print(f"✅ Website updated successfully!")
         print(f"📝 Run 'git diff' to see changes applied to HTML")
         print(f"📝 Run 'git add . && git commit -m \"Update portfolio content\"' to save changes")
-        print(f"📝 Run 'git checkout -- website-samuel-portfolio.html' to discard changes")
+        print(f"📝 Run 'git checkout -- index.html' to discard changes")
         
     except Exception as e:
         print(f"❌ Error: {e}")

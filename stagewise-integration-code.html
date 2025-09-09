@@ -1,0 +1,89 @@
+&lt;!-- Manually included Stagewise Toolbar library --&gt;
+    &lt;script src="stagewise-toolbar.js"&gt;&lt;/script&gt; 
+    &lt;!-- Make sure 'stagewise-toolbar.js' is the correct name and path to the file you copied in Step 3 --&gt;
+    &lt;!--
+    STEP 1: Manually include the @stagewise/toolbar library script here.
+    For example, if you downloaded it to a 'libs' folder:
+    &lt;script src="libs/stagewise-toolbar.js"&gt;&lt;/script&gt;
+    Or, if you use it as an ES Module (ensure the library supports this standalone):
+    &lt;script type="module"&gt;
+    // If initToolbar is exported from a local file
+    // import { initToolbar } from './libs/stagewise-toolbar.esm.js';
+    // window.initToolbar = initToolbar; // Make it global for the script below if needed
+    &lt;/script&gt;
+    --&gt;
+    &lt;script&gt;
+    // Existing script content from line 516...
+    const d_existing = document.documentElement,
+    c_existing = document.getElementById('c'),
+    f_existing = document.getElementById('f');
+    document.addEventListener('mousemove', e => {
+    if (c_existing) c_existing.style.transform = `translate(${e.clientX}px,${e.clientY}px)`;
+    if (f_existing) f_existing.style.transform = `translate(${e.clientX}px,${e.clientY}px)`;
+    });
+    const io_existing = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) {
+    e.target.classList.add('show');
+    io_existing.unobserve(e.target);
+    }
+    }), { threshold: .15 });
+    document.querySelectorAll('.card,.skill,.item').forEach(el => io_existing.observe(el));
+    document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect(),
+    x = (e.clientX - r.left) / r.width - .5,
+    y = (e.clientY - r.top) / r.height - .5;
+    card.style.transform = `rotateX(${-y * 6}deg) rotateY(${x * 6}deg)`;
+    });
+    card.addEventListener('mouseleave', () => card.style.transform = 'rotateX(0) rotateY(0)');
+    });
+    const toggleButton = document.getElementById('toggle');
+    if (toggleButton) {
+    toggleButton.addEventListener('click', () => {
+    const n = d_existing.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    d_existing.setAttribute('data-theme', n);
+    localStorage.setItem('theme', n);
+    });
+    }
+    const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ?
+    'dark' : 'light');
+    d_existing.setAttribute('data-theme', currentTheme);
+
+    // --- Stagewise Toolbar Integration (Framework-Agnostic Approach) ---
+
+    // 2. Define your toolbar configuration
+    const stagewiseConfig = {
+    plugins: [], // Add any generic plugins if applicable
+    };
+
+    // 3. Initialize the toolbar when your app starts
+    function setupStagewise() {
+    // Check if running in a likely development environment (e.g., localhost)
+    const isDevelopmentEnvironment = window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1' ||
+    window.location.protocol === 'file:'; // Also consider file protocol as dev
+
+    // Only initialize once and only in development mode
+    // Assumes `initToolbar` is made globally available by the Stagewise script you include.
+    if (isDevelopmentEnvironment && typeof window.initToolbar === 'function') {
+    try {
+    window.initToolbar(stagewiseConfig);
+    console.log('Stagewise Toolbar initialized.');
+    } catch (error) {
+    console.error('Error initializing Stagewise Toolbar:', error);
+    }
+    } else if (isDevelopmentEnvironment) {
+    console.warn('Stagewise `initToolbar` function not found. Ensure @stagewise/toolbar script is included correctly
+    before this script.');
+    }
+    }
+
+    // Call the setup function.
+    // For a static HTML page, you can call it directly or on DOMContentLoaded.
+    if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupStagewise);
+    } else {
+    // DOMContentLoaded has already fired
+    setupStagewise();
+    }
+    &lt;/script&gt;

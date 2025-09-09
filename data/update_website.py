@@ -161,9 +161,13 @@ def update_contact_section(html_content, content):
     """Update contact section"""
     contact = content['contact']
     
+    # Build phone section only if phone exists
+    phone_section = ""
+    if contact.get("phone") and contact["phone"].strip():
+        phone_section = f'<br>☎︎ <a href="tel:{contact["phone"].replace(" ", "")}">{contact["phone"]}</a>'
+    
     contact_html = f'''                <p>📍 {contact["location"]}<br>✉︎ <a
-                        href="mailto:{contact["email"]}">{contact["email"]}</a><br>☎︎ <a
-                        href="tel:{contact["phone"].replace(' ', '')}">{contact["phone"]}</a><br><a
+                        href="mailto:{contact["email"]}">{contact["email"]}</a>{phone_section}<br><a
                         href="{contact["linkedin_url"]}" target="_blank">LinkedIn</a> | <a
                         href="{contact["github_url"]}" target="_blank">GitHub</a></p>'''
     

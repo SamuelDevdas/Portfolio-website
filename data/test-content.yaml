@@ -1,0 +1,63 @@
+# Test Website Content - Minimal dummy data for testing
+# Copy this to website-content.yaml to test changes
+
+hero:
+  name: John Doe
+  tagline: Full Stack Developer • React & Node.js Specialist • Building Modern Web Apps
+
+profile:
+  summary: Experienced Full Stack Developer with 3+ years building scalable web applications. Expert in React, Node.js, and cloud deployment. Proven track record of delivering user-friendly solutions that increase engagement by 25%. Passionate about clean code and modern development practices.
+
+skills:
+  frontend:
+    title: Frontend
+    technologies: React, TypeScript, Tailwind CSS, Next.js
+  
+  backend:
+    title: Backend
+    technologies: Node.js, Express, PostgreSQL, MongoDB
+  
+  cloud:
+    title: Cloud & DevOps
+    technologies: AWS, Docker, GitHub Actions, Vercel
+
+experience:
+  - title: Senior Developer — Tech Corp
+    period: 2022 – Present
+    description: • Built e-commerce platform serving 10k+ users. • Reduced page load times by 40% through optimization. • Led team of 3 developers on React migration.
+  
+  - title: Frontend Developer — StartupXYZ
+    period: 2021 – 2022
+    description: • Developed responsive web app with 95% user satisfaction. • Implemented real-time chat using WebSockets.
+
+projects:
+  - title: E-Commerce Dashboard
+    description: React admin panel with real-time analytics and inventory management. 500+ daily active users.
+  
+  - title: Task Manager App
+    description: Full-stack productivity app with drag-drop interface and team collaboration features.
+
+education:
+  - title: BS Computer Science
+    details: State University — GPA 3.8/4.0
+  
+  - title: Certifications
+    details: AWS Solutions Architect • Google Cloud Professional
+
+volunteering:
+  - title: Code Mentor
+    description: Teaching programming to underrepresented students through nonprofit bootcamps.
+  
+  - title: Open Source Contributor
+    description: Contributing to React ecosystem and maintaining popular npm packages.
+
+contact:
+  location: San Francisco, CA
+  email: john.doe@example.com
+  phone: +1 555 123 4567
+  linkedin_url: https://linkedin.com/in/johndoe
+  github_url: https://github.com/johndoe
+  cv_filename: CV_John_Doe.pdf
+
+footer:
+  copyright: © 2025 John Doe — Built with React & Node.js

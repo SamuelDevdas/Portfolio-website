@@ -135,12 +135,14 @@ python -m http.server 8000
 - `data/update_website.py` - Content injection script
 
 ## Key Features
-- **Responsive design** with mobile optimization
+- **Fully responsive design** with mobile-first approach
+- **Multi-breakpoint layout**: Desktop (>768px), Tablet (≤768px), Mobile (≤480px)
 - **Dark/light theme toggle** with system preference detection
 - **Smooth animations** and intersection observers
-- **3D card hover effects** for interactive experience
-- **Custom cursor** with blend modes
+- **3D card hover effects** for interactive experience (disabled on touch devices)
+- **Custom cursor** with blend modes (hidden on touch devices)
 - **Video background** in hero section
+- **Mobile-optimized navigation** with repositioned elements
 - **Professional sections**: About, Skills, Experience, Projects, Education, Contact
 
 ## Technical Stack
@@ -148,8 +150,9 @@ python -m http.server 8000
 - **Content**: YAML-based content management
 - **Styling**: CSS custom properties for theming
 - **Accessibility**: Semantic HTML, skip links, ARIA labels
-- **Modern CSS**: Grid, Flexbox, backdrop-filter
+- **Modern CSS**: Grid, Flexbox, backdrop-filter, CSS custom properties
 - **Browser Support**: Modern browsers with graceful fallbacks
+- **Mobile Optimization**: Touch-friendly interactions, optimized typography, responsive layouts
 
 ## Context Information
 - CV document serves as single source of truth for content

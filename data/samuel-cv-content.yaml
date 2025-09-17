@@ -6,7 +6,17 @@ hero:
   tagline: AI & Data Science Engineer • LLM & ML Specialist • Building Gen‑AI at Scale
 
 profile:
-  summary: Masters Graduate in Applied Information and Data Science with expertise in AI-driven solutions. <strong>Swiss B Work Permit holder</strong> authorized to work anywhere across Switzerland. Expert in <em>Generative AI, LLM Ops, MLOps & data engineering</em>. Proven track record in digital transformation and workflow optimization for multinational clients including Pilatus Aircraft, JTI, HSLU, and Raytheon. Specializing in GenAI/LLMs, Machine Learning, NLP, and Data Analytics.
+  lead: Masters Graduate in Applied Information and Data Science with expertise in AI-driven solutions.
+  permit:
+    type: Swiss B residence permit
+    note: family reunification; unrestricted work authorization, no sponsorship
+  supporting: Expert in Generative AI, LLM Ops, MLOps and data engineering. Proven track record in digital transformation and workflow optimization for multinational clients including Pilatus Aircraft, JTI, HSLU, and Raytheon. Specializing in GenAI/LLMs, Machine Learning, NLP, and Data Analytics.
+  highlights:
+    - Generative AI
+    - LLM Ops
+    - Azure AI
+    - RAG
+    - NLP
 
 skills:
   data_science:

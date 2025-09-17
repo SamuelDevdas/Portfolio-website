@@ -46,6 +46,62 @@ def update_hero_section(html_content, content):
     
     return html_content
 
+def update_profile_section_structured(html_content, content):
+    """Update profile/about section with structured YAML support.
+    Prefers structured keys (lead/permit/supporting/highlights) and falls back to legacy 'summary'.
+    All YAML fields are plain text; HTML/CSS presentation is added here.
+    """
+
+    profile = content.get('profile', {})
+
+    # Prefer structured schema
+    if any(k in profile for k in ('lead', 'permit', 'supporting', 'highlights')):
+        lead = (profile.get('lead') or '').strip()
+        permit = profile.get('permit') or {}
+        permit_type = (permit.get('type') or '').strip()
+        permit_note = (permit.get('note') or '').strip()
+        supporting = (profile.get('supporting') or '').strip()
+        highlights = profile.get('highlights') or []
+
+        parts = []
+        # Lead sentence
+        if lead:
+            parts.append(f'<p class="profile-lead">{lead}</p>')
+
+        # Permit badge on its own line
+        if permit_type or permit_note:
+            permit_html = ''
+            if permit_type:
+                permit_html += f'<strong>{permit_type}</strong>'
+            if permit_note:
+                permit_html += f' <span class="permit-note">({permit_note})</span>'
+            parts.append(f'<p class="profile-permit">{permit_html}</p>')
+
+        if supporting:
+            # Put "Specializing in" on a new line if present
+            if 'Specializing in' in supporting:
+                supporting = supporting.replace('Specializing in', '<br>Specializing in')
+            parts.append(f'<p class="profile-supporting">{supporting}</p>')
+
+        if highlights:
+            pills = ' '.join(f'<span class="pill">{h}</span>' for h in highlights)
+            parts.append(f'<div class="pills">{pills}</div>')
+
+        profile_html = "\n                ".join(parts)
+
+        # Replace the inner HTML of the card within the about section
+        pattern = r'(<section id=\"about\">.*?<div class=\"card[^>]*\">)(.*?)(</div>\s*</section>)'
+        replacement = r'\1\n                ' + profile_html + r'\n            \3'
+        return re.sub(pattern, replacement, html_content, flags=re.DOTALL)
+
+    # Legacy summary fallback
+    legacy = (profile.get('summary') or '').strip()
+    if not legacy:
+        return html_content
+    pattern = r'(<section id=\"about\">.*?<p>)(.*?)(</p>.*?</section>)'
+    replacement = rf'\g<1>{legacy}\g<3>'
+    return re.sub(pattern, replacement, html_content, flags=re.DOTALL)
+
 def update_profile_section(html_content, content):
     """Update profile/about section"""
     # Convert plain text to HTML with proper formatting
@@ -219,7 +275,7 @@ def main():
         html_content = update_hero_section(html_content, content)
         
         print("🔄 Updating profile section...")
-        html_content = update_profile_section(html_content, content)
+        html_content = update_profile_section_structured(html_content, content)
         
         print("🔄 Updating skills section...")
         html_content = update_skills_section(html_content, content)

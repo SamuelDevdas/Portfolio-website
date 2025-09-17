@@ -309,6 +309,39 @@
             color: var(--glass-txt)
         }
 
+        /* About/Profile readability tweaks (markup unchanged for YAML updates) */
+        #about .card {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        #about .card p {
+            max-width: 70ch;
+            margin-inline: auto;
+            font-size: 1.05rem;
+            line-height: 1.9;
+            text-wrap: pretty;
+        }
+
+        #about .card p strong {
+            color: var(--text);
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            padding: 0.12rem 0.45rem;
+            border-radius: 0.5rem;
+            white-space: nowrap;
+        }
+
+        /* Structured profile elements (rendered by updater script) */
+        #about .profile-lead { /* inherits paragraph typography above */ }
+        #about .permit-note { color: var(--glass-txt); margin-left: .35rem; }
+        #about .profile-permit { margin-top: .35rem; display: flex; align-items: center; gap: .5rem; max-width: 70ch; margin-inline: auto; }
+        #about .profile-permit strong { display: inline-block; margin-right: .1rem; }
+        #about .profile-permit .permit-note { white-space: nowrap; }
+        #about .profile-supporting { color: var(--glass-txt); margin-top: .5rem; }
+        #about .pills { margin-top: .9rem; display: flex; flex-wrap: wrap; gap: .5rem; max-width: 70ch; margin-inline: auto; }
+        #about .pill { padding: .3rem .6rem; border-radius: 999px; font-size: .78rem; letter-spacing: .2px; color: var(--gold); background: rgba(212, 175, 55, .14); border: 1px solid rgba(212, 175, 55, .35); }
+
         .timeline {
             padding-left: 2rem;
             margin-left: 1rem;
@@ -628,7 +661,10 @@
         <section id="about">
             <h2>Profile</h2>
             <div class="card show" style="transform:none">
-                <p>Masters Graduate in Applied Information and Data Science with expertise in AI-driven solutions. <strong>Swiss B Work Permit holder</strong> authorized to work anywhere across Switzerland. Expert in <em>Generative AI, LLM Ops, MLOps & data engineering</em>. Proven track record in digital transformation and workflow optimization for multinational clients including Pilatus Aircraft, JTI, HSLU, and Raytheon. Specializing in GenAI/LLMs, Machine Learning, NLP, and Data Analytics.</p>
+                <p class="profile-lead">Masters Graduate in Applied Information and Data Science with expertise in AI-driven solutions.</p>
+                <p class="profile-permit"><strong>Swiss B residence permit</strong> <span class="permit-note">(family reunification; unrestricted work authorization, no sponsorship)</span></p>
+                <p class="profile-supporting">Expert in Generative AI, LLM Ops, MLOps and data engineering. Proven track record in digital transformation and workflow optimization for multinational clients including Pilatus Aircraft, JTI, HSLU, and Raytheon. <br>Specializing in GenAI/LLMs, Machine Learning, NLP, and Data Analytics.</p>
+                <div class="pills"><span class="pill">Generative AI</span> <span class="pill">LLM Ops</span> <span class="pill">Azure AI</span> <span class="pill">RAG</span> <span class="pill">NLP</span></div>
             </div>
         </section>
         <section id="skills">

@@ -3,20 +3,21 @@
 
 hero:
   name: Samuel Devdas
-  tagline: AI & Data Science Engineer • LLM & ML Specialist • Building Gen‑AI at Scale
+  tagline: AI & Data Science Engineer • Private‑Cloud Gen‑AI on Azure
 
 profile:
-  lead: Masters Graduate in Applied Information and Data Science with expertise in AI-driven solutions.
+  lead: I build private‑cloud LLM applications on Azure that cut drafting cycles and costs by ~90% for Swiss teams.
   permit:
     type: Swiss B residence permit
-    note: family reunification; unrestricted work authorization, no sponsorship
+    note: family reunification; unrestricted work authorization; no sponsorship
     display: text
-  supporting: Expert in Generative AI, LLM Ops, MLOps and data engineering. Proven track record in digital transformation and workflow optimization for multinational clients including Pilatus Aircraft, JTI, HSLU, and Raytheon. Specializing in GenAI/LLMs, Machine Learning, NLP, and Data Analytics.
+  supporting: Proven with Pilatus, JTI, HSLU and Raytheon. I design agentic workflows, robust RAG and MLOps so stakeholders can operate and improve systems independently.
   highlights:
-    - Generative AI
-    - LLM Ops
-    - Azure AI
+    - Agentic Workflows
     - RAG
+    - LLM Ops
+    - MLOps
+    - Azure AI
     - NLP
 
 skills:

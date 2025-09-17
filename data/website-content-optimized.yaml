@@ -1,0 +1,103 @@
+# Optimized website content (text-only YAML)
+
+hero:
+  name: Samuel Devdas
+  tagline: AI & Data Science Engineer • Private‑Cloud Gen‑AI on Azure
+
+profile:
+  lead: I build private‑cloud LLM applications on Azure that cut drafting cycles and costs by ~80% for Swiss Innovation teams.
+  permit:
+    type: Swiss B residence permit
+    note: family reunification; unrestricted work authorization; no sponsorship
+    display: text
+  supporting: Proven at HSLU-IKM, JTI, Pilatus, and Raytheon. I design agentic workflows, robust RAG and MLOps so stakeholders can operate and improve systems independently.
+  highlights:
+    - Agentic Workflows
+    - RAG
+    - LLM Ops
+    - MLOps
+    - Azure AI & Foundry
+    - NLP
+
+skills:
+  data_science:
+    title: Generative AI & Data Science
+    technologies: Azure AI Foundry, Agentic Frameworks, RAG, Prompt Engineering, Machine Learning, NLP, Fine‑Tuning & Quantization
+
+  programming:
+    title: Programming & Development
+    technologies: Python, R, SQL, Bash, Git, Docker, CI/CD, Azure Cloud, FastAPI, Web Apps, Big Data (WarpScript)
+
+  engineering:
+    title: Engineering & Management
+    technologies: Process Optimization, Quality Engineering (SPC, DMAIC), Project Management, Stakeholder Management, Team Leadership
+
+  languages:
+    title: Languages & Tools
+    technologies: English (C1, IELTS 8), German (A1.1), CAD, Markdown/HTML, Linux
+
+experience:
+  - title: AI Development Consultant — HSLU
+    period: March 2025 – Present
+    description: • Built secure, private‑cloud LLM apps on Azure AI Foundry, cutting draft time and costs by ~90%. • Designed multi‑agent workflows and custom GPTs for Innosuisse funding proposals. • Trained stakeholders to operate and optimize AI systems independently.
+
+  - title: Lead Consultant/Owner — TrueVine Insights
+    period: April 2021 – Present
+    description: • Deliver custom AI agents/applications leveraging advanced NLP and Generative AI. • Accelerate AI adoption through training and ETL process optimization. • Develop and deploy trading strategies for financial instruments using PineScript.
+
+  - title: Data Scientist Intern — Pilatus Aircraft
+    period: Oct 2023 – March 2024
+    description: • Developed big‑data algorithms using WarpScript and Python for aircraft system monitoring. • Employed CI/CD workflows and documented analytical findings for engineering teams and stakeholders.
+
+  - title: Project Quality Engineer — Mann Machines
+    period: Sept 2020 – April 2021
+    description: • Led a quality engineering team of four, optimizing manufacturing processes using SPC and DMAIC. • Authored PPAP packages ensuring compliance with AS9100 and FAI standards.
+
+  - title: Senior Quality Engineer — Collins Aerospace
+    period: Nov 2019 – Sept 2020
+    description: • Conducted root‑cause analyses using SAP QM, reducing production defects by 10%. • Built data‑visualization dashboards improving first‑pass yield with data‑driven insights.
+
+projects:
+  - title: Personality‑Aware AI Assistant
+    description: Master’s thesis building an AI assistant that infers Big Five traits to personalize support for older adults.
+
+  - title: Private‑Cloud LLM Applications
+    description: Secure Azure AI Foundry apps with multi‑agent workflows and robust RAG, achieving ~90% cost/time reductions.
+
+  - title: Aircraft Data Analytics Platform
+    description: Big‑data algorithms for aircraft system monitoring using WarpScript and Python with CI/CD workflows.
+
+  - title: Trading Strategy Development
+    description: Automated trading strategies for stocks and other instruments on TradingView using PineScript.
+
+education:
+  - title: MSc Applied Information & Data Science
+    details: HSLU Lucerne — Sept 2022 – May 2025
+
+  - title: MEng Advanced Materials Design
+    details: University of Ottawa — Sept 2014 – Oct 2016
+
+  - title: BEng Mechanical Engineering
+    details: RTM Nagpur University — Sept 2009 – Sept 2013
+
+  - title: Microsoft Certifications
+    details: Security, Compliance & Identity Fundamentals • Azure AI Engineer Associate (In‑progress)
+
+volunteering:
+  - title: Pro Bono AI/IT Consulting
+    description: Delivering cost‑efficient open‑source LLM applications for NGOs, small businesses and non‑profits to integrate analytics and automation.
+
+  - title: Fitness & Sports
+    description: Bodyweight training, cooking, javelin throw and cricket.
+
+contact:
+  location: Amriswil, Switzerland
+  email: SamuelDevdas01@gmail.com
+  phone: 
+  linkedin_url: https://www.linkedin.com/in/samueldevdas
+  github_url: https://github.com/SamuelDevdas
+  cv_filename: CV_Samuel_Devdas_G-8-10.pdf
+
+footer:
+  copyright: © 2025 Samuel Devdas — Built with pure HTML, CSS & JS.
+

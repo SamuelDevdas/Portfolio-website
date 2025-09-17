@@ -39,7 +39,7 @@ skills:
 experience:
   - title: AI Development Consultant — HSLU
     period: March 2025 – Present
-    description: • Built secure, private‑cloud LLM apps on Azure AI Foundry, cutting draft time and costs by ~90%. • Designed multi‑agent workflows and custom GPTs for innosuisse funding proposals. • Trained stakeholders to operate and optimize AI systems independently.
+    description: • Built secure, private‑cloud LLM apps on Azure AI Foundry, cutting draft time and costs by ~80%. • Designed multi‑agent workflows and custom GPTs for innosuisse funding proposals. • Trained stakeholders to operate and optimize AI systems independently.
   
   - title: Lead Consultant/Owner — TrueVine Insights
     period: April 2021 – Present
@@ -62,7 +62,7 @@ projects:
     description: Master's thesis project developing AI assistant using generative models that detects user personality traits via Big Five model to provide personalized support for older adults.
   
   - title: Private‑Cloud LLM Applications
-    description: Secure Azure AI Foundry applications cutting operational costs by 90% with multi‑agent workflows and custom GPT implementations.
+    description: Secure Azure AI Foundry applications cutting operational costs by 80% with multi‑agent workflows and custom GPT implementations.
   
   - title: Aircraft Data Analytics Platform
     description: Big data algorithms for aircraft system monitoring using WarpScript and Python with CI/CD workflows for engineering teams.

@@ -68,24 +68,40 @@ def update_profile_section_structured(html_content, content):
         if lead:
             parts.append(f'<p class="profile-lead">{lead}</p>')
 
-        # Permit badge on its own line
-        if permit_type or permit_note:
-            permit_html = ''
-            if permit_type:
-                permit_html += f'<strong>{permit_type}</strong>'
-            if permit_note:
-                permit_html += f' <span class="permit-note">({permit_note})</span>'
-            parts.append(f'<p class="profile-permit">{permit_html}</p>')
-
         if supporting:
             # Put "Specializing in" on a new line if present
             if 'Specializing in' in supporting:
                 supporting = supporting.replace('Specializing in', '<br>Specializing in')
             parts.append(f'<p class="profile-supporting">{supporting}</p>')
 
+        # Permit presentation (after tags): text block or chips
+        if permit_type or permit_note:
+            display = (permit.get('display') or '').strip().lower()
+            note_items = []
+            if permit_note:
+                note_clean = permit_note.replace('(', '').replace(')', '')
+                for piece in re.split(r'[;,]', note_clean):
+                    t = piece.strip()
+                    if t:
+                        note_items.append(t)
+            if display == 'chips':
+                chips = [f'<span class="permit-chip primary">{permit_type or "Work authorization"}</span>']
+                chips += [f'<span class="permit-chip muted">{t}</span>' for t in note_items]
+                parts.append(f'<div class="permit-pills">{" ".join(chips)}</div>')
+            else:
+                label_text = permit_type or 'Work authorization'
+                list_items = ''.join(f'<li>{t}</li>' for t in note_items)
+                permit_block = '<div class="permit-block">'
+                permit_block += f'<p class="permit-heading"><span class="label">Work authorization:</span> <strong>{label_text}</strong></p>'
+                if list_items:
+                    permit_block += f'<ul class="permit-list">{list_items}</ul>'
+                permit_block += '</div>'
+                parts.append(permit_block)
+
+        # Highlights (chips) placed after permit block for a clean ending
         if highlights:
             pills = ' '.join(f'<span class="pill">{h}</span>' for h in highlights)
-            parts.append(f'<div class="pills">{pills}</div>')
+            parts.append(f'<div class="pills pills-bottom">{pills}</div>')
 
         profile_html = "\n                ".join(parts)
 

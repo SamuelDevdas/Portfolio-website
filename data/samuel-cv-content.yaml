@@ -10,6 +10,7 @@ profile:
   permit:
     type: Swiss B residence permit
     note: family reunification; unrestricted work authorization, no sponsorship
+    display: text
   supporting: Expert in Generative AI, LLM Ops, MLOps and data engineering. Proven track record in digital transformation and workflow optimization for multinational clients including Pilatus Aircraft, JTI, HSLU, and Raytheon. Specializing in GenAI/LLMs, Machine Learning, NLP, and Data Analytics.
   highlights:
     - Generative AI

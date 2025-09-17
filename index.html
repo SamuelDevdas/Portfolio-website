@@ -323,24 +323,97 @@
             text-wrap: pretty;
         }
 
-        #about .card p strong {
-            color: var(--text);
-            background: rgba(212, 175, 55, 0.12);
-            border: 1px solid rgba(212, 175, 55, 0.35);
-            padding: 0.12rem 0.45rem;
-            border-radius: 0.5rem;
-            white-space: nowrap;
-        }
-
         /* Structured profile elements (rendered by updater script) */
         #about .profile-lead { /* inherits paragraph typography above */ }
-        #about .permit-note { color: var(--glass-txt); margin-left: .35rem; }
-        #about .profile-permit { margin-top: .35rem; display: flex; align-items: center; gap: .5rem; max-width: 70ch; margin-inline: auto; }
-        #about .profile-permit strong { display: inline-block; margin-right: .1rem; }
-        #about .profile-permit .permit-note { white-space: nowrap; }
-        #about .profile-supporting { color: var(--glass-txt); margin-top: .5rem; }
-        #about .pills { margin-top: .9rem; display: flex; flex-wrap: wrap; gap: .5rem; max-width: 70ch; margin-inline: auto; }
-        #about .pill { padding: .3rem .6rem; border-radius: 999px; font-size: .78rem; letter-spacing: .2px; color: var(--gold); background: rgba(212, 175, 55, .14); border: 1px solid rgba(212, 175, 55, .35); }
+        #about .profile-supporting { color: var(--glass-txt); margin-top: .5rem; line-height: 1.8; }
+        #about .pills {
+            margin-top: .75rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem .5rem;
+            max-width: 70ch;
+            margin-inline: auto;
+        }
+        #about .pills-bottom {
+            margin-top: 1.25rem;
+        }
+        #about .pill {
+            padding: .22rem .52rem;
+            border-radius: 999px;
+            font-size: .74rem;
+            letter-spacing: .2px;
+            color: var(--gold);
+            background: rgba(212, 175, 55, .08);
+            border: 1px solid rgba(212, 175, 55, .22);
+            white-space: nowrap;
+        }
+        /* Permit block (text display) */
+        #about .permit-block {
+            margin-top: .75rem;
+            max-width: 70ch;
+            margin-inline: auto;
+            color: var(--glass-txt);
+            font-size: .94rem;
+        }
+        #about .permit-heading {
+            margin: 0 0 .2rem;
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: .4rem;
+        }
+        #about .permit-heading .label {
+            font-weight: 600;
+            color: var(--glass-txt);
+        }
+        #about .permit-heading strong {
+            font-weight: 600;
+            color: var(--text);
+        }
+        #about .permit-list {
+            list-style: none;
+            margin: 0;
+            padding-left: 1.4rem;
+            color: var(--glass-txt);
+            display: flex;
+            flex-direction: column;
+            gap: .18rem;
+        }
+        #about .permit-list li {
+            position: relative;
+            line-height: 1.6;
+        }
+        #about .permit-list li::before {
+            content: '•';
+            position: absolute;
+            left: -1.4rem;
+            color: var(--glass-txt);
+            opacity: .75;
+        }
+        /* Permit chips placed after the tag pills */
+        #about .permit-pills {
+            margin-top: .75rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem .6rem;
+            max-width: 70ch;
+            margin-inline: auto;
+        }
+        #about .permit-chip {
+            padding: .28rem .58rem;
+            border-radius: 999px;
+            font-size: .78rem;
+            letter-spacing: .2px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text);
+        }
+        #about .permit-chip.primary {
+            color: #111;
+            background: var(--gold);
+            border-color: rgba(212, 175, 55, 0.55);
+        }
+        #about .permit-chip.muted { color: var(--glass-txt); }
 
         .timeline {
             padding-left: 2rem;
@@ -662,9 +735,9 @@
             <h2>Profile</h2>
             <div class="card show" style="transform:none">
                 <p class="profile-lead">Masters Graduate in Applied Information and Data Science with expertise in AI-driven solutions.</p>
-                <p class="profile-permit"><strong>Swiss B residence permit</strong> <span class="permit-note">(family reunification; unrestricted work authorization, no sponsorship)</span></p>
                 <p class="profile-supporting">Expert in Generative AI, LLM Ops, MLOps and data engineering. Proven track record in digital transformation and workflow optimization for multinational clients including Pilatus Aircraft, JTI, HSLU, and Raytheon. <br>Specializing in GenAI/LLMs, Machine Learning, NLP, and Data Analytics.</p>
-                <div class="pills"><span class="pill">Generative AI</span> <span class="pill">LLM Ops</span> <span class="pill">Azure AI</span> <span class="pill">RAG</span> <span class="pill">NLP</span></div>
+                <div class="permit-block"><p class="permit-heading"><span class="label">Work authorization:</span> <strong>Swiss B residence permit</strong></p><ul class="permit-list"><li>family reunification</li><li>unrestricted work authorization</li><li>no sponsorship</li></ul></div>
+                <div class="pills pills-bottom"><span class="pill">Generative AI</span> <span class="pill">LLM Ops</span> <span class="pill">Azure AI</span> <span class="pill">RAG</span> <span class="pill">NLP</span></div>
             </div>
         </section>
         <section id="skills">

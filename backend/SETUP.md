@@ -1,38 +1,50 @@
-# Netlify Forms Setup Guide
+# Portfolio Website - Setup Documentation
 
-## Step 1: Connect GitHub to Netlify (5 min)
+## Hosting
 
-1. Go to [netlify.com](https://netlify.com)
-2. Click **Sign up** → **GitHub**
-3. Authorize Netlify
-4. Click **Add new site** → **Import an existing project**
-5. Select **GitHub** → Find `Portfolio-website`
-6. Click **Deploy**
+| Item            | Value                                     |
+| --------------- | ----------------------------------------- |
+| **Platform**    | Netlify                                   |
+| **Site URL**    | https://truevineinsights.ch               |
+| **Netlify URL** | capable-bunny-d5800b.netlify.app          |
+| **Repo**        | github.com/SamuelDevdas/Portfolio-website |
 
----
+## DNS (Infomaniak)
 
-## Step 2: Enable Form Notifications
+| Type  | Name | Value                            |
+| ----- | ---- | -------------------------------- |
+| A     | @    | 75.2.60.5                        |
+| CNAME | www  | capable-bunny-d5800b.netlify.app |
 
-1. In Netlify dashboard, go to **Site settings**
-2. Click **Forms** → **Form notifications**
-3. Add **Email notification**
-4. Enter: `SamuelDevdas01@gmail.com`
-5. Save
+## Contact Form
 
----
+- **Method**: Netlify Forms
+- **Form name**: `consultation`
+- **Notifications**: Email to SamuelDevdas01@gmail.com
+- **Spam protection**: Honeypot field enabled
 
-## Step 3: Update DNS (if using custom domain)
+## Key Files
 
-1. Go to **Domain settings** in Netlify
-2. Add `truevineinsights.ch`
-3. Update your DNS to point to Netlify
+| File         | Purpose                                   |
+| ------------ | ----------------------------------------- |
+| `index.html` | Form with `data-netlify="true"` attribute |
+| `js/main.js` | AJAX form submission handler              |
 
----
+## How Form Works
 
-## Done!
+1. User fills form → submits
+2. Netlify receives submission
+3. Netlify emails you
+4. Submissions stored in Netlify dashboard
 
-Your form will now:
-- ✅ Send emails to your inbox
-- ✅ Work on mobile
-- ✅ Block spam (honeypot enabled)
-- ✅ Store submissions in Netlify dashboard
+## To View Submissions
+
+Netlify Dashboard → Forms → consultation
+
+## Troubleshooting
+
+| Issue            | Solution                                  |
+| ---------------- | ----------------------------------------- |
+| Form not working | Check Netlify Forms dashboard             |
+| No email         | Check Form notifications in Site settings |
+| SSL error        | Netlify → Domain management → Verify DNS  |

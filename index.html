@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Samuel Devdas — AI & Data Science Engineer</title>
+    <meta name="description" content="AI & Data Science Engineer specializing in private-cloud LLM applications on Azure. Cut drafting cycles and costs by 80% for Swiss enterprises.">
+    <meta property="og:title" content="Samuel Devdas — AI & Data Science Engineer">
+    <meta property="og:description" content="Private-Cloud Gen-AI solutions for Swiss enterprises.">
+    <meta property="og:url" content="https://truevineinsights.ch">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -27,7 +34,7 @@
             --text: #fff;
             --bg: #0e0e0e;
             --glass: var(--dark-glass);
-            --glass-txt: #bbb
+            --glass-txt: #ccc
         }
 
         * {
@@ -479,6 +486,57 @@
             font-size: .82rem
         }
 
+        /* Contact Form Styles */
+        .contact-form {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+            opacity: 0;
+            margin-top: 0;
+        }
+        .contact-form.open {
+            max-height: 400px;
+            opacity: 1;
+            margin-top: 1.5rem;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: .85rem 1rem;
+            margin-bottom: .8rem;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 8px;
+            background: rgba(255,255,255,0.05);
+            color: var(--text);
+            font-family: inherit;
+            font-size: .95rem;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: rgba(255,255,255,0.08);
+        }
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: var(--glass-txt);
+        }
+        .contact-form textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .contact-form .btn {
+            width: 100%;
+            margin-top: .5rem;
+        }
+        .form-success {
+            color: #4ade80;
+            font-weight: 500;
+            text-align: center;
+            padding: 1rem;
+        }
+
         .circle {
             position: absolute;
             border-radius: 50%;
@@ -735,7 +793,7 @@
             <h2>Profile</h2>
             <div class="card show" style="transform:none">
                 <p class="profile-lead">I build private‑cloud LLM applications on Azure that cut drafting cycles and costs by ~80% for Swiss Innovation teams.</p>
-                <p class="profile-supporting">Proven at HSLU-IKM, JTI, Pilatus, and Raytheon. I design agentic workflows, robust RAG and MLOps so stakeholders can operate and improve systems independently.</p>
+                <p class="profile-supporting">Trusted by <strong>HSLU</strong>, <strong>Pilatus Aircraft</strong>, and <strong>Raytheon</strong>. I design agentic workflows, robust RAG and MLOps so stakeholders can operate and improve systems independently.</p>
                 <div class="permit-block"><p class="permit-heading"><span class="label">Work authorization:</span> <strong>Swiss B residence permit</strong></p><ul class="permit-list"><li>family reunification</li><li>unrestricted work authorization</li><li>no sponsorship</li></ul></div>
                 <div class="pills pills-bottom"><span class="pill">Agentic Workflows</span> <span class="pill">RAG</span> <span class="pill">LLM Ops</span> <span class="pill">MLOps</span> <span class="pill">Azure AI & Foundry</span> <span class="pill">NLP</span></div>
             </div>
@@ -753,7 +811,7 @@
                     <h3>Engineering & Management</h3><span>Process Optimization, Quality Engineering (SPC, DMAIC), Project Management, Stakeholder Management, Team Leadership</span>
                 </div>
                 <div class="skill">
-                    <h3>Languages & Tools</h3><span>English (C1, IELTS 8), German (A1.1), CAD, Markdown/HTML, Linux</span>
+                    <h3>Languages & Tools</h3><span>English (C1, IELTS 8), German (A1), CAD, Markdown/HTML, Linux</span>
                 </div>
             </div>
         </section>
@@ -838,12 +896,28 @@
             </div>
         </section>
         <section id="contact">
-            <h2>Contact</h2>
-            <div class="card show" style="transform:none">
-                <p>📍 Amriswil, Switzerland<br>✉︎ <a
-                        href="mailto:SamuelDevdas01@gmail.com">SamuelDevdas01@gmail.com</a><br><a
-                        href="https://www.linkedin.com/in/samueldevdas" target="_blank">LinkedIn</a> | <a
-                        href="https://github.com/SamuelDevdas" target="_blank">GitHub</a></p>
+            <h2>Let's Work Together</h2>
+            <div class="card show" style="transform:none;max-width:600px;margin:0 auto">
+                <p style="font-size:1.1rem;margin-bottom:1rem"><strong>Ready to cut your AI development costs by 80%?</strong></p>
+                <p>📍 Amriswil, Switzerland<br>
+                📧 <a href="mailto:SamuelDevdas01@gmail.com?subject=AI%20Project%20Inquiry">SamuelDevdas01@gmail.com</a><br>
+                🔗 <a href="https://www.linkedin.com/in/samueldevdas" target="_blank">LinkedIn</a> | <a href="https://github.com/SamuelDevdas" target="_blank">GitHub</a></p>
+                
+                <button type="button" class="btn" id="toggleFormBtn" style="display:inline-block;margin-top:1.2rem" onclick="document.getElementById('contactForm').classList.toggle('open');this.textContent=this.textContent.includes('Book')?'✕ Close Form':'📅 Book a Free Consultation'">📅 Book a Free Consultation</button>
+                
+                <form id="contactForm" class="contact-form" onsubmit="event.preventDefault();const f=this;const subject=encodeURIComponent(f.subject.value);const body=encodeURIComponent('From: '+f.email.value+'\\n\\n'+f.message.value);window.location.href='mailto:SamuelDevdas01@gmail.com?subject='+subject+'&body='+body;f.reset();document.getElementById('toggleFormBtn').click();">
+                    <input type="email" name="email" placeholder="Your email address *" required>
+                    <input type="text" name="subject" value="Free 30-min AI Consultation Request" placeholder="Subject">
+                    <textarea name="message" placeholder="Tell me briefly about your project...">Hi Samuel,
+
+I'm interested in discussing how AI/LLM solutions could help my business.
+
+Project type: [Document automation / RAG system / Custom AI agent]
+Timeline: [Q1 2025]
+
+Looking forward to connecting!</textarea>
+                    <button type="submit" class="btn">� Open in Email Client</button>
+                </form>
             </div>
         </section>
     </main>

@@ -76,10 +76,24 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const formData = new FormData(contactForm);
-        const subject = encodeURIComponent(formData.get('subject'));
-        const body = encodeURIComponent('From: ' + formData.get('email') + '\n\n' + formData.get('message'));
-        window.location.href = 'mailto:SamuelDevdas01@gmail.com?subject=' + subject + '&body=' + body;
-        contactForm.reset();
-        toggleFormBtn.click();
+        const email = formData.get('email');
+        const subject = encodeURIComponent(formData.get('subject') || 'Free 30-min AI Consultation Request');
+        const message = formData.get('message') || '';
+        const body = encodeURIComponent('From: ' + email + '\n\n' + message);
+        
+        const mailtoLink = 'mailto:SamuelDevdas01@gmail.com?subject=' + subject + '&body=' + body;
+        
+        // Create a temporary anchor and click it - most reliable method
+        const link = document.createElement('a');
+        link.href = mailtoLink;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        // Reset form after a short delay
+        setTimeout(() => {
+            contactForm.reset();
+            toggleFormBtn.click();
+        }, 500);
     });
 });

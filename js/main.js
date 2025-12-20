@@ -72,28 +72,50 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleFormBtn.textContent = toggleFormBtn.textContent.includes('Book') ? 'Close' : 'Book a Free Consultation';
     });
 
-    // Contact Form Submission (mailto)
-    contactForm.addEventListener('submit', (e) => {
+    // Contact Form Submission - Netlify Forms (AJAX for better UX)
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const formData = new FormData(contactForm);
-        const email = formData.get('email');
-        const subject = encodeURIComponent(formData.get('subject') || 'Free 30-min AI Consultation Request');
-        const message = formData.get('message') || '';
-        const body = encodeURIComponent('From: ' + email + '\n\n' + message);
         
-        const mailtoLink = 'mailto:SamuelDevdas01@gmail.com?subject=' + subject + '&body=' + body;
+        const submitBtn = document.getElementById('submitBtn');
+        const formStatus = document.getElementById('formStatus');
         
-        // Create a temporary anchor and click it - most reliable method
-        const link = document.createElement('a');
-        link.href = mailtoLink;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        formStatus.style.display = 'none';
         
-        // Reset form after a short delay
-        setTimeout(() => {
-            contactForm.reset();
-            toggleFormBtn.click();
-        }, 500);
+        try {
+            const formData = new FormData(contactForm);
+            
+            const response = await fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData).toString(),
+            });
+            
+            if (response.ok) {
+                // Success
+                formStatus.textContent = '✓ Message sent! I\'ll get back to you soon.';
+                formStatus.style.color = '#4ade80';
+                formStatus.style.display = 'block';
+                contactForm.reset();
+                
+                // Close form after delay
+                setTimeout(() => {
+                    toggleFormBtn.click();
+                    formStatus.style.display = 'none';
+                }, 3000);
+            } else {
+                throw new Error('Failed to send message');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            formStatus.textContent = '✗ Failed to send. Please email me directly at SamuelDevdas01@gmail.com';
+            formStatus.style.color = '#f87171';
+            formStatus.style.display = 'block';
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+        }
     });
 });

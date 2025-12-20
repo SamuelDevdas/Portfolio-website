@@ -168,19 +168,14 @@
                 
                 <button type="button" class="btn" id="toggleFormBtn" style="display:inline-block;margin-top:1.2rem">Book a Free Consultation</button>
                 
-                <form id="contactForm" class="contact-form">
-                    <input type="email" name="email" placeholder="Your email address *" required>
-                    <input type="text" name="subject" value="Free 30-min AI Consultation Request" placeholder="Subject">
-                    <textarea name="message" placeholder="Tell me briefly about your project...">Hi Samuel,
-
-I'd like to discuss a potential AI project.
-
-Brief description:
-
-Timeline:
-
-Looking forward to connecting.</textarea>
-                    <button type="submit" class="btn">Open in Email Client</button>
+                <form id="contactForm" class="contact-form" name="consultation" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="consultation">
+                    <p style="display:none"><input name="bot-field"></p>
+                    <input type="text" name="name" placeholder="Your name" autocomplete="name">
+                    <input type="email" name="email" placeholder="Your email address *" required autocomplete="email">
+                    <textarea name="message" placeholder="Tell me briefly about your project..."></textarea>
+                    <button type="submit" class="btn" id="submitBtn">Send Message</button>
+                    <p id="formStatus" style="margin-top:0.8rem;text-align:center;display:none;"></p>
                 </form>
             </div>
         </section>

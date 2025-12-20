@@ -115,13 +115,13 @@
 
 ## Implementation Checklist
 
-### Updates Required
+### Updates Completed ✅
 
-- [ ] **Line 75**: Update link underline from `rgba(212, 175, 55, 0.3)` → `rgba(1, 132, 136, 0.3)`
-- [ ] **Line 478**: Update skill icon bg from `rgba(212, 175, 55, .08)` → `rgba(1, 132, 136, 0.08)`
-- [ ] **Line 479**: Update skill icon border from `rgba(212, 175, 55, .22)` → `rgba(1, 132, 136, 0.22)`
-- [ ] **Line 546**: Update input focus from `rgba(212, 175, 55, 0.55)` → `rgba(1, 132, 136, 0.55)`
-- [ ] **Line 610**: Update footer gradient from `var(--gold), #c4a030` → `var(--teal-primary), var(--teal-hover)`
+- [x] **Line 75**: Link underline `rgba(212, 175, 55, 0.3)` → `rgba(1, 132, 136, 0.3)`
+- [x] **Line 478**: Skill icon bg `rgba(212, 175, 55, .08)` → `rgba(1, 132, 136, 0.08)`
+- [x] **Line 479**: Skill icon border `rgba(212, 175, 55, .22)` → `rgba(1, 132, 136, 0.22)`
+- [x] **Line 546**: Input focus `rgba(212, 175, 55, 0.55)` → `rgba(1, 132, 136, 0.55)`
+- [x] **Line 610**: Footer gradient `var(--gold), #c4a030` → `var(--teal-primary), var(--teal-hover)`
 
 ### Already Using Variables (Auto-Updated)
 
@@ -133,12 +133,40 @@
 
 ---
 
+## Brand Messaging (aligned with LinkedIn)
+
+### Core Positioning
+
+**Headline:** AI Engineer & Data Scientist | Consultant | Production LLM Systems (Reliability, Quality, Cost) | Switzerland
+
+### Key Messages
+
+| Context               | Message                                                                                                                                 |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **Hero tagline**      | AI Engineer & Data Scientist • Production LLM Systems • Switzerland                                                                     |
+| **Value proposition** | Production AI and LLM systems designed for reliable real-world operation: measurable quality, controlled cost, and practical deployment |
+| **Credentials**       | MSc in Applied Information and Data Science (HSLU Lucerne), M.Eng background                                                            |
+| **Trust signals**     | Pilatus Aircraft, JTI, HSLU, Raytheon                                                                                                   |
+
+### Skill Pills (Profile Section)
+
+| Pill                | Rationale            |
+| ------------------- | -------------------- |
+| Agentic Workflows   | Core capability      |
+| RAG                 | Key technology       |
+| Evaluation          | Quality focus        |
+| Prompt Optimisation | Cost optimization    |
+| Private Cloud       | Deployment specialty |
+| Cost & Guardrails   | Business value       |
+
+---
+
 ## Verification Plan
 
 After implementation:
 
 1. **Visual Check**: Screenshot hero, skills, contact, footer
-2. **No Gold Remnants**: `grep -n "212, 175, 55" index.html` should return 0 results
+2. **No Gold Remnants**: `grep -n "212, 175, 55" index.html` should return 0 results ✅ Verified
 3. **Variables Working**: `grep -n "teal-primary\|teal-hover\|teal-light" index.html` confirms usage
 
 ---
@@ -170,4 +198,5 @@ After implementation:
 
 ---
 
-*Document Version: 1.0 | Last updated: 2025-12-20*
+*Document Version: 1.1 | Last updated: 2025-12-20*
+

@@ -198,15 +198,19 @@ After implementation:
 
 ---
 
-*Document Version: 1.2 | Last updated: 2025-12-20*
+*Document Version: 1.3 | Last updated: 2025-12-21*
 
 ---
 
 ## Repository Structure (Modularized)
 
 - **`index.html`** — Clean semantic HTML structure
-- **`css/styles.css`** — All brand styles, theme logic, and animations (890+ lines)
-- **`js/main.js`** — Interactive functionality: custom cursor, mobile nav, theme toggle, and contact form logic
+- **`css/styles.css`** — All brand styles, theme logic, and animations (885 lines)
+- **`js/main.js`** — Interactive functionality: custom cursor, mobile nav, theme toggle, Web3Forms AJAX handler
 - **`logo/`** — Brand assets
 
+## External Services
 
+- **Contact Form**: Web3Forms (250 submissions/month free)
+- **Hosting**: GitHub Pages
+- **Domain**: Infomaniak DNS → GitHub Pages IPs

@@ -198,5 +198,15 @@ After implementation:
 
 ---
 
-*Document Version: 1.1 | Last updated: 2025-12-20*
+*Document Version: 1.2 | Last updated: 2025-12-20*
+
+---
+
+## Repository Structure (Modularized)
+
+- **`index.html`** — Clean semantic HTML structure
+- **`css/styles.css`** — All brand styles, theme logic, and animations (890+ lines)
+- **`js/main.js`** — Interactive functionality: custom cursor, mobile nav, theme toggle, and contact form logic
+- **`logo/`** — Brand assets
+
 

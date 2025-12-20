@@ -6,7 +6,7 @@ hero:
   tagline: AI & Data Science Engineer • Private‑Cloud Gen‑AI on Azure
 
 profile:
-  lead: I build private‑cloud LLM applications on Azure that cut drafting cycles and costs by ~90% for Swiss teams.
+  lead: I build private‑cloud LLM applications on Azure that cut drafting cycles and costs by ~80% for Swiss teams.
   permit:
     type: Swiss B residence permit
     note: family reunification; unrestricted work authorization; no sponsorship
@@ -63,7 +63,7 @@ projects:
     description: Master's thesis project developing AI assistant using generative models that detects user personality traits via Big Five model to provide personalized support for older adults.
   
   - title: Private‑Cloud LLM Applications
-    description: Secure Azure AI Foundry applications cutting operational costs by 80% with multi‑agent workflows and custom GPT implementations.
+    description: Secure Azure AI Foundry applications cutting operational costs by ~80% with multi‑agent workflows and custom GPT implementations.
   
   - title: Aircraft Data Analytics Platform
     description: Big data algorithms for aircraft system monitoring using WarpScript and Python with CI/CD workflows for engineering teams.

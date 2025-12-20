@@ -53,8 +53,21 @@
         }
 
         a {
-            color: inherit;
-            text-decoration: none
+            color: var(--gold);
+            text-decoration: none;
+            transition: opacity 0.2s ease
+        }
+
+        a:hover {
+            opacity: 0.8
+        }
+
+        .card a, section a {
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3)
+        }
+
+        .card a:hover, section a:hover {
+            border-bottom-color: var(--gold)
         }
 
         .skip {
@@ -810,8 +823,8 @@
         <section id="about">
             <h2>Profile</h2>
             <div class="card show" style="transform:none">
-                <p class="profile-lead">I build private‑cloud LLM applications on Azure that cut drafting cycles and costs by ~80% for Swiss Innovation teams.</p>
-                <p class="profile-supporting">Trusted by <strong>HSLU</strong>, <strong>Pilatus Aircraft</strong>, and <strong>Raytheon</strong>. I design agentic workflows, robust RAG and MLOps so stakeholders can operate and improve systems independently.</p>
+                <p class="profile-lead">I architect private‑cloud LLM solutions on Azure—helping Swiss innovation teams reduce costs and turnaround times by up to 80%.</p>
+                <p class="profile-supporting">Trusted by HSLU, Pilatus Aircraft, and Raytheon. I design agentic workflows and MLOps systems that stakeholders can operate independently.</p>
                 <div class="permit-block"><p class="permit-heading"><span class="label">Work authorization:</span> <strong>Swiss B residence permit</strong></p><ul class="permit-list"><li>family reunification</li><li>unrestricted work authorization</li><li>no sponsorship</li></ul></div>
                 <div class="pills pills-bottom"><span class="pill">Agentic Workflows</span> <span class="pill">RAG</span> <span class="pill">LLM Ops</span> <span class="pill">MLOps</span> <span class="pill">Azure AI & Foundry</span> <span class="pill">NLP</span></div>
             </div>
@@ -917,7 +930,7 @@
         <section id="contact">
             <h2>Let's Work Together</h2>
             <div class="card show" style="transform:none;max-width:600px;margin:0 auto">
-                <p style="font-size:1.1rem;margin-bottom:1rem"><strong>Ready to cut your AI development costs by 80%?</strong></p>
+                <p style="font-size:1.1rem;margin-bottom:1rem"><strong>Let's discuss your next AI project.</strong></p>
                 <p>Amriswil, Switzerland<br>
                 <a href="mailto:SamuelDevdas01@gmail.com?subject=AI%20Project%20Inquiry">SamuelDevdas01@gmail.com</a><br>
                 <a href="https://www.linkedin.com/in/samueldevdas" target="_blank">LinkedIn</a> | <a href="https://github.com/SamuelDevdas" target="_blank">GitHub</a></p>
@@ -929,12 +942,13 @@
                     <input type="text" name="subject" value="Free 30-min AI Consultation Request" placeholder="Subject">
                     <textarea name="message" placeholder="Tell me briefly about your project...">Hi Samuel,
 
-I'm interested in discussing how AI/LLM solutions could help my business.
+I'd like to discuss a potential AI project.
 
-Project type: [Document automation / RAG system / Custom AI agent]
-Timeline: [Q1 2025]
+Brief description:
 
-Looking forward to connecting!</textarea>
+Timeline:
+
+Looking forward to connecting.</textarea>
                     <button type="submit" class="btn">� Open in Email Client</button>
                 </form>
             </div>

@@ -798,19 +798,12 @@
 
         @media(max-width:480px) {
             nav {
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                z-index: 4000;
-                justify-content: center;
-                background: rgba(0, 0, 0, 0.8);
-                backdrop-filter: blur(15px);
-                padding: 0.75rem;
-                margin: 0;
-                border-radius: 0;
-                flex-wrap: wrap;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                /* Keep transparent like desktop, but ensure spacing is safe */
+                padding: 1rem 1.5rem; 
+                justify-content: space-between; /* Restore left/right alignment */
+                background: transparent; /* Remove the solid black bar */
+                backdrop-filter: none; /* Remove blur box */
+                border-bottom: none; /* Remove border */
             }
 
             nav a {

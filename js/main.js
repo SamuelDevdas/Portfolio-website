@@ -71,4 +71,52 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.classList.toggle('open');
         toggleFormBtn.textContent = toggleFormBtn.textContent.includes('Book') ? 'Close' : 'Book a Free Consultation';
     });
+
+    // Contact Form Submission - Web3Forms (AJAX for feedback)
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const submitBtn = document.getElementById('submitBtn');
+        const formStatus = document.getElementById('formStatus');
+        
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        formStatus.style.display = 'none';
+        
+        try {
+            const formData = new FormData(contactForm);
+            
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                // Success
+                formStatus.textContent = '✓ Message sent! I\'ll get back to you soon.';
+                formStatus.style.color = '#4ade80';
+                formStatus.style.display = 'block';
+                contactForm.reset();
+                
+                // Close form after delay
+                setTimeout(() => {
+                    toggleFormBtn.click();
+                    formStatus.style.display = 'none';
+                }, 3000);
+            } else {
+                throw new Error(result.message || 'Failed to send message');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            formStatus.textContent = '✗ Failed to send. Please email me directly.';
+            formStatus.style.color = '#f87171';
+            formStatus.style.display = 'block';
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+        }
+    });
 });

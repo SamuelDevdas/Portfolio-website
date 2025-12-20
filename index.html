@@ -145,9 +145,77 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-        html[data-theme="dark"] .theme-toggle::before {
-            transform: translateX(22px);
+        [data-theme="dark"] .theme-toggle::before {
+            transform: translateX(20px);
             background: var(--gold);
+        }
+
+        /* Mobile Nav Styles */
+        .burger {
+            display: none;
+            cursor: pointer;
+            z-index: 3001;
+            background: none;
+            border: none;
+            flex-direction: column;
+            gap: 5px;
+            padding: 5px;
+        }
+
+        .burger span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--text);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .burger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 70%;
+                max-width: 300px;
+                background: #0b0b0b;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transition: right 0.4s ease;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+                padding: 2rem;
+                backdrop-filter: blur(10px);
+                border-left: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            /* Burger Animation */
+            .burger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+                background: var(--gold);
+            }
+            .burger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .burger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+                background: var(--gold);
+            }
         }
 
         .theme-toggle:hover {
@@ -244,7 +312,7 @@
         }
 
         h1 span {
-            display: block
+            display: inline
         }
 
         header p {
@@ -262,12 +330,13 @@
         .btn {
             background: var(--gold);
             color: #000;
-            padding: .9rem 2.2rem;
+            padding: .65rem 1.5rem;
             border: none;
+            font-size: .85rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 4px;
+            letter-spacing: .5px;
+            border-radius: 3px;
             cursor: pointer;
             transition: background .3s, transform .25s
         }
@@ -805,16 +874,29 @@
 <body><a href="#main" class="skip">Skip to content</a>
     <div class="circle circle1"></div>
     <div class="circle circle2"></div>
-    <nav aria-label="Primary"><a href="#about" class="hover">About</a><a href="#skills" class="hover">Skills</a><a
-            href="#exp" class="hover">Experience</a><a href="#projects" class="hover">Projects</a><a href="#edu"
-            class="hover">Education</a><a href="#vol" class="hover">Volunteering</a><a href="#contact"
-            class="hover">Contact</a><button class="theme-toggle" id="toggle" aria-label="Toggle dark mode"></button></nav>
+    <nav aria-label="Primary">
+        <button class="burger" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links">
+            <a href="#about" class="hover">About</a>
+            <a href="#skills" class="hover">Skills</a>
+            <a href="#exp" class="hover">Experience</a>
+            <a href="#projects" class="hover">Projects</a>
+            <a href="#edu" class="hover">Education</a>
+            <a href="#vol" class="hover">Volunteering</a>
+            <a href="#contact" class="hover">Contact</a>
+            <button class="theme-toggle" id="toggle" aria-label="Toggle dark mode"></button>
+        </div>
+    </nav>
     <header><video autoplay muted loop playsinline preload="metadata"
             poster="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=60">
             <source src="https://cdn.coverr.co/videos/coverr-data-flow-3618-1080p.mp4" type="video/mp4">
         </video>
         <div class="o">
-            <h1><span>Samuel</span><span>Devdas</span></h1>
+            <h1><span>Samuel</span> <span>Devdas</span></h1>
             <p>AI & Data Science Engineer • Private‑Cloud Gen‑AI on Azure</p>
             <div class="cta"><a href="#contact" class="btn hover">Hire Me</a><a href="https://www.linkedin.com/in/samueldevdas/"
                     class="btn hover" target="_blank" rel="noopener" aria-label="Open LinkedIn profile (new tab)">View LinkedIn</a>
@@ -958,7 +1040,25 @@ Looking forward to connecting.</textarea>
     <footer>© 2025 Samuel Devdas — Built with pure HTML, CSS & JS.</footer>
     <div id="c"></div>
     <div id="f"></div>
-    <script>const d = document.documentElement, c = document.getElementById('c'), f = document.getElementById('f'); document.addEventListener('mousemove', e => { c.style.transform = `translate(${e.clientX}px,${e.clientY}px)`; f.style.transform = `translate(${e.clientX}px,${e.clientY}px)` }); const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target) } }), { threshold: .15 }); document.querySelectorAll('.card,.skill,.item').forEach(el => io.observe(el)); document.querySelectorAll('.card').forEach(card => { card.addEventListener('mousemove', e => { const r = card.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; card.style.transform = `rotateX(${-y * 6}deg) rotateY(${x * 6}deg)` }); card.addEventListener('mouseleave', () => card.style.transform = 'rotateX(0) rotateY(0)') }); document.getElementById('toggle').addEventListener('click', () => { const n = d.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'; d.setAttribute('data-theme', n); localStorage.setItem('theme', n) }); d.setAttribute('data-theme', localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'));</script>
+    <script>const d = document.documentElement, c = document.getElementById('c'), f = document.getElementById('f'); document.addEventListener('mousemove', e => { c.style.transform = `translate(${e.clientX}px,${e.clientY}px)`; f.style.transform = `translate(${e.clientX}px,${e.clientY}px)` }); const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target) } }), { threshold: .15 }); document.querySelectorAll('.card,.skill,.item').forEach(el => io.observe(el)); document.querySelectorAll('.card').forEach(card => { card.addEventListener('mousemove', e => { const r = card.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; card.style.transform = `rotateX(${-y * 6}deg) rotateY(${x * 6}deg)` }); card.addEventListener('mouseleave', () => card.style.transform = 'rotateX(0) rotateY(0)') }); document.getElementById('toggle').addEventListener('click', () => { const n = d.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'; d.setAttribute('data-theme', n); localStorage.setItem('theme', n) }); d.setAttribute('data-theme', localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'));
+    
+    // Burger Menu Logic
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        burger.classList.toggle('active');
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('active');
+            burger.classList.remove('active');
+        });
+    });
+    </script>
 </body>
 
 </html>

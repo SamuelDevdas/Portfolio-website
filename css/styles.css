@@ -394,6 +394,40 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))
         }
 
+        .grid.grid--center {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .grid.grid--center > .card {
+            flex: 1 1 280px;
+            max-width: 360px;
+        }
+
+        /* Education timeline accent */
+        #edu .grid.grid--center {
+            position: relative;
+        }
+
+        #edu .grid.grid--center::before {
+            content: "";
+            position: absolute;
+            top: 0.5rem;
+            bottom: 0.5rem;
+            left: -1.4rem;
+            width: 3px;
+            background: var(--gold);
+            border-radius: 999px;
+            opacity: 0.9;
+            pointer-events: none;
+        }
+
+        #edu .grid.grid--center > .card {
+            position: relative;
+            z-index: 1;
+        }
+
         .card {
             padding: 2.2rem 1.8rem;
             border-radius: 18px;
@@ -764,6 +798,15 @@
             .grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
+            }
+
+            .grid.grid--center > .card {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+
+            #edu .grid.grid--center::before {
+                display: none;
             }
 
             .card,

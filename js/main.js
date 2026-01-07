@@ -1,10 +1,9 @@
 /**
  * main.js - TrueVine Insights Portfolio
- * Custom cursor, scroll animations, theme toggle, and mobile nav
+ * Custom cursor, scroll animations, and mobile nav
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    const d = document.documentElement;
     const c = document.getElementById('c');
     const f = document.getElementById('f');
 
@@ -34,17 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         card.addEventListener('mouseleave', () => card.style.transform = 'rotateX(0) rotateY(0)');
     });
-
-    // Theme toggle
-    const toggle = document.getElementById('toggle');
-    toggle.addEventListener('click', () => {
-        const n = d.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        d.setAttribute('data-theme', n);
-        localStorage.setItem('theme', n);
-    });
-
-    // Set initial theme
-    d.setAttribute('data-theme', localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'));
 
     // Burger Menu Logic
     const burger = document.querySelector('.burger');

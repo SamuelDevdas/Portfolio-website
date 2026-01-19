@@ -7,10 +7,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const c = document.getElementById('c');
     const f = document.getElementById('f');
 
-    // Custom cursor
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Custom cursor with throttling via requestAnimationFrame
+    let cursorX = 0, cursorY = 0, rafPending = false;
+
+    function updateCursor() {
+        c.style.transform = `translate(${cursorX}px,${cursorY}px)`;
+        f.style.transform = `translate(${cursorX}px,${cursorY}px)`;
+        rafPending = false;
+    }
+
     document.addEventListener('mousemove', e => {
-        c.style.transform = `translate(${e.clientX}px,${e.clientY}px)`;
-        f.style.transform = `translate(${e.clientX}px,${e.clientY}px)`;
+        cursorX = e.clientX;
+        cursorY = e.clientY;
+        if (!rafPending) {
+            rafPending = true;
+            requestAnimationFrame(updateCursor);
+        }
     });
 
     // Intersection Observer for scroll animations
@@ -23,16 +38,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.card,.skill,.item').forEach(el => io.observe(el));
 
-    // Card tilt effect
-    document.querySelectorAll('.card').forEach(card => {
-        card.addEventListener('mousemove', e => {
-            const r = card.getBoundingClientRect();
-            const x = (e.clientX - r.left) / r.width - .5;
-            const y = (e.clientY - r.top) / r.height - .5;
-            card.style.transform = `rotateX(${-y * 6}deg) rotateY(${x * 6}deg)`;
+    // Card tilt effect (skip if user prefers reduced motion or no hover support)
+    if (!prefersReducedMotion && window.matchMedia('(hover: hover)').matches) {
+        document.querySelectorAll('.card').forEach(card => {
+            let rect = null;
+
+            card.addEventListener('mouseenter', () => {
+                rect = card.getBoundingClientRect();
+            });
+
+            card.addEventListener('mousemove', e => {
+                if (!rect) rect = card.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - .5;
+                const y = (e.clientY - rect.top) / rect.height - .5;
+                card.style.transform = `rotateX(${-y * 6}deg) rotateY(${x * 6}deg)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'rotateX(0) rotateY(0)';
+                rect = null;
+            });
         });
-        card.addEventListener('mouseleave', () => card.style.transform = 'rotateX(0) rotateY(0)');
-    });
+    }
 
     // Burger Menu Logic
     const burger = document.querySelector('.burger');

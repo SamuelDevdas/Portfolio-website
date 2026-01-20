@@ -1,0 +1,109 @@
+# TrueVine Insights Landing Page Content
+# Company landing page for truevineinsights.ch
+# Updated with LinkedIn profile data (Jan 2026)
+
+hero:
+  company_name: TrueVine Insights
+  tagline: Production LLM Systems for Swiss Enterprises
+  sub_tagline: Secure, reliable, cost-efficient AI — from scoping to deployment
+  cta_primary:
+    text: Get Started
+    link: "#contact"
+  cta_secondary:
+    text: Meet the Founder
+    link: "portfolio.html"
+
+about:
+  headline: AI That Works in Production
+  lead: We deliver production AI and LLM systems focused on reliability, security, and cost control.
+  supporting: Founded in 2021, we've built AI solutions for HSLU, Pilatus Aircraft, and Collins Aerospace. Our systems include evaluation and regression checks to maintain quality over time — and we train your team for independent operation.
+  trust_signals:
+    - 34% improvement over baseline in AI research
+    - Swiss B permit (immediate availability)
+    - Proven with Swiss aerospace & research institutions
+    - Thesis work being prepared for scientific publication
+
+services:
+  - title: Production LLM Systems
+    icon: ai
+    description: Retrieval (RAG) + agent workflows with evaluation and regression checks for quality over time.
+
+  - title: APIs & Data Pipelines
+    icon: data
+    description: Lightweight Python/FastAPI services, ETL pipelines, data validation, and integration into client processes.
+
+  - title: Evaluation & Optimization
+    icon: quality
+    description: Prompt optimization, structured outputs, review loops to improve consistency and reliability across runs.
+
+  - title: Training & Enablement
+    icon: training
+    description: Stakeholder training, documentation, and handover for long-term independent operation. We build for handoff.
+
+testimonials:
+  - quote: "His thesis is excellently written and will potentially be published in a scientific journal... I highly recommend him as a valuable asset to any organization."
+    author: Prof. Guang Lu
+    role: Senior Data Scientist & AI Lecturer, HSLU
+    relationship: Thesis Supervisor
+
+  - quote: "Samuel designed and implemented a full conversational agent pipeline, achieving a 34% improvement over baseline approaches... rare balance of technical competence and human-centred thinking."
+    author: Alexandre de Spindler
+    role: Computer Scientist and Teacher, HSLU
+    relationship: Thesis Co-Supervisor
+
+  - quote: "Worked thoroughly and was able to integrate himself into the team quickly. His way of communicating was seamless and efficient. He was able to deliver things on time while working independently."
+    author: Barna Becsek
+    role: Team Lead Aircraft Data & Analytics
+    relationship: Manager at Pilatus Aircraft
+
+insights:
+  headline: Insights & Articles
+  description: Practical lessons from building production AI systems
+  articles_url: https://www.linkedin.com/in/samueldevdas/recent-activity/articles/
+  featured:
+    - title: "[Article Title 1]"
+      excerpt: "[Brief description of the article content]"
+      date: "[Publication date]"
+      url: "[LinkedIn article URL]"
+    - title: "[Article Title 2]"
+      excerpt: "[Brief description]"
+      date: "[Publication date]"
+      url: "[LinkedIn article URL]"
+    - title: "[Article Title 3]"
+      excerpt: "[Brief description]"
+      date: "[Publication date]"
+      url: "[LinkedIn article URL]"
+
+team:
+  founder:
+    name: Samuel Devdas
+    title: Founder & Lead Consultant
+    headline: "AI Engineer | Production LLM Systems (Retrieval, Agents, Evaluation) | Secure, Reliable, Cost-Efficient | Python/FastAPI/Azure | Switzerland"
+    current_roles:
+      - Lead Consultant, TrueVine Insights (Apr 2021 – Present)
+      - AI Consultant, HSLU (Mar 2025 – Present)
+      - Co-Supervisor, MSc Thesis, HSLU (Jul 2025 – Present)
+    credentials:
+      - MSc Applied Information & Data Science (HSLU Lucerne)
+      - MEng Advanced Materials Manufacturing & Design (Ottawa)
+      - Microsoft Certified: Security, Compliance & Identity
+      - Azure AI Engineer Associate (in progress)
+    summary: AI Engineer specializing in production LLM systems (retrieval, agents, evaluation). Built secure LLM applications for HSLU, Pilatus Aircraft, and Collins Aerospace. Focus on reliability, security, and cost control with evaluation-driven iteration.
+    highlight: '"34% improvement over baseline... rare balance of technical competence and human-centred thinking" — Alexandre de Spindler, HSLU'
+    portfolio_link: portfolio.html
+    linkedin: https://www.linkedin.com/in/samueldevdas/
+    github: https://github.com/SamuelDevdas
+
+contact:
+  headline: Let's Build Your AI Solution
+  lead: Whether you need a production LLM system, data pipeline, or team training, we're here to help. Swiss B permit holder — immediate start available.
+  location: Amriswil, Switzerland
+  email: SamuelDevdas01@gmail.com
+  phone: +41 77 448 8108
+  linkedin: https://www.linkedin.com/in/samueldevdas
+
+footer:
+  copyright: © 2026 TrueVine Insights
+  tagline: Production AI for the real world
+  portfolio_text: Samuel Devdas Portfolio
+  portfolio_link: portfolio.html

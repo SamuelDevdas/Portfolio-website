@@ -6,9 +6,26 @@
 document.addEventListener('DOMContentLoaded', () => {
     const c = document.getElementById('c');
     const f = document.getElementById('f');
+    const mainNav = document.querySelector('nav');
 
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Scroll-aware navigation background
+    let scrollTicking = false;
+    window.addEventListener('scroll', () => {
+        if (!scrollTicking) {
+            requestAnimationFrame(() => {
+                if (window.scrollY > 50) {
+                    mainNav.classList.add('scrolled');
+                } else {
+                    mainNav.classList.remove('scrolled');
+                }
+                scrollTicking = false;
+            });
+            scrollTicking = true;
+        }
+    }, { passive: true });
 
     // Custom cursor with throttling via requestAnimationFrame
     let cursorX = 0, cursorY = 0, rafPending = false;

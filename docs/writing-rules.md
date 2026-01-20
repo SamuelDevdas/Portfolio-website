@@ -38,6 +38,23 @@
 - Anxiety-inducing language ("you're falling behind", "before it's too late")
 - Excessive superlatives ("revolutionary", "game-changing", "best-in-class")
 - Promotional buzzwords ("cutting-edge", "world-class", "enterprise-grade")
+- Marketing-label compound modifiers ("Swiss-standard", "production-ready")
+- Condescending phrases ("Here's what many don't realize", "What people don't understand")
+
+### Humility Patterns
+
+Present insights as discoveries, not superior knowledge:
+- **Avoid**: "The most critical insight", "What [group] doesn't realize"
+- **Use**: "A key discovery", "One observation from this work"
+- **Avoid**: "Gets thrown around as buzzword"
+- **Use**: "Appears frequently in discussions"
+
+### Describe, Don't Editorialize
+
+Use neutral language that describes what happens:
+- **Avoid**: Loaded verbs ("dumping", "struggling", "failing to")
+- **Avoid**: Dismissive modifiers ("glorified", "mere", "just a", "so-called")
+- Let facts speak; trust the reader to draw conclusions
 
 ---
 
@@ -84,6 +101,32 @@
 - "One might argue" → make the argument
 - "It could be said that" → say it
 - "It's crucial to understand" → just explain
+
+**Negative framing words** (avoid):
+- "bottleneck", "limitation", "weakness", "failing", "struggle", "lack", "deficiency"
+- Reframe as opportunity: "constraint" or "opportunity" instead of "bottleneck"
+
+**Informal/colloquial phrases** (avoid):
+- "baked in", "under the hood", "out of the box"
+- "at the end of the day", "moving forward"
+- Use plain alternatives: "included", "internally", "by default"
+
+**AI contrast patterns** (avoid in body text):
+- Snappy "X, not Y" contrasts are AI tells
+- "a pause, not a permanent lock" → "Users can always update"
+- Exception: Acceptable in titles for punch
+
+**Redundant qualifiers** (cut):
+- "truly", "very", "really", "actually", "just"
+- Every word should earn its place
+
+**AI sentence openers** (vary these):
+- Avoid starting multiple sentences with "As", "In", "Here", "This", "It"
+- Test: If 2+ consecutive paragraphs start the same way, revise
+
+**Rule of three** (use sparingly):
+- "adjective, adjective, adjective" is an AI pattern
+- Acceptable once in taglines; avoid repeating throughout
 
 ### Jargon Discipline
 
@@ -182,6 +225,17 @@ Swiss business audiences value:
 - [ ] No promotional buzzwords
 - [ ] Specific outcomes stated
 - [ ] Credentials and trust signals included
+
+### AI Detection Self-Check
+
+Before finalizing, read aloud and ask:
+
+1. Does every paragraph start differently?
+2. Are sentence lengths varied (some short, some medium)?
+3. Would I speak this way to a colleague?
+4. Did I take any clear positions, or did I hedge everything?
+5. Are there any "X, not Y" contrasts I missed?
+6. Is the "rule of three" pattern overused?
 
 ---
 

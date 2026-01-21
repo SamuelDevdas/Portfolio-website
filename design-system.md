@@ -214,3 +214,49 @@ After implementation:
 - **Contact Form**: Web3Forms (250 submissions/month free)
 - **Hosting**: GitHub Pages
 - **Domain**: Infomaniak DNS → GitHub Pages IPs
+
+---
+
+## Improvement Principles
+
+### What We Add
+
+Elements that enhance without cluttering:
+
+- **Scroll indicators** — Subtle navigation cues (low opacity, gentle animation)
+- **Micro-interactions** — Purposeful feedback on hover/focus states
+
+### What We Avoid
+
+Elements rejected to preserve minimalism:
+
+- ❌ **Service card icons** — Clean cards rely on typography hierarchy alone
+- ❌ **Custom cursor effects** — Removed for distraction-free experience
+- ❌ **Decorative elements** — No visual noise that doesn't serve function
+
+### Quality Gates
+
+Before any addition:
+
+1. Does it pass all 4 core principles? (Premium, Restrained, Coherent, Hierarchical)
+2. Can we achieve the same effect with less?
+3. Does removal hurt more than addition helps?
+
+---
+
+## Priority Todo
+
+### P1: Now
+
+- [x] **Hero scroll indicator** — Subtle chevron, `rgba(255,255,255,0.5)`, gentle float animation
+
+### P2: Next
+
+- [ ] **Mobile responsiveness audit** — Test 375px, 390px, 768px, verify touch targets ≥44px
+- [ ] **Hamburger menu verification** — Ensure smooth open/close on all devices
+
+### P3: Later
+
+- [ ] **About section refinement** — Consider subtle background gradient or 2-column layout
+- [ ] **Case study content** — Real project showcase (needs content creation)
+- [ ] **Performance audit** — Lighthouse check, optimize video loading

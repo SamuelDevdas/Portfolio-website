@@ -16,7 +16,7 @@ hero:
 about:
   headline: AI That Works in Production
   lead: We deliver production AI and LLM systems focused on reliability, security, and cost control.
-  supporting: Founded in 2021, we've built AI solutions for HSLU, Pilatus Aircraft, and Collins Aerospace. Our systems include evaluation and regression checks to maintain quality over time — and we train your team for independent operation.
+  supporting: Founded in 2021, we've delivered AI solutions for HSLU, Pilatus Aircraft, JTI, and Collins Aerospace. Our systems include evaluation and regression checks to maintain quality over time — and we train your team for independent operation.
   trust_signals:
     - 34% improvement over baseline in AI research
     - Swiss B permit (immediate availability)
@@ -88,7 +88,7 @@ team:
       - MEng Advanced Materials Manufacturing & Design (Ottawa)
       - Microsoft Certified: Security, Compliance & Identity
       - Azure AI Engineer Associate (in progress)
-    summary: AI Engineer specializing in production LLM systems (retrieval, agents, evaluation). Built secure LLM applications for HSLU, Pilatus Aircraft, and Collins Aerospace. Focus on reliability, security, and cost control with evaluation-driven iteration.
+    summary: AI Engineer specializing in production LLM systems (retrieval, agents, evaluation). Delivered AI solutions for HSLU, Pilatus Aircraft, JTI, and Collins Aerospace. Focus on reliability, security, and cost control with evaluation-driven iteration.
     highlight: '"34% improvement over baseline... rare balance of technical competence and human-centred thinking" — Alexandre de Spindler, HSLU'
     portfolio_link: portfolio.html
     linkedin: https://www.linkedin.com/in/samueldevdas/

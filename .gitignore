@@ -5,3 +5,8 @@ __pycache__
 .DS_Store
 PORTFOLIO-IMPROVEMENTS.md
 .npm-cache/
+
+# Test screenshots
+logo/option*.png
+logo/scale-*.png
+logo/zoom-*.png

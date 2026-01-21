@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(superpowers:brainstorming)",
+      "Bash(python3 -m http.server:*)",
+      "Bash(curl:*)",
+      "Bash(git checkout:*)",
+      "Bash(node --check:*)",
+      "mcp__chrome_devtools__list_pages",
+      "mcp__chrome_devtools__new_page",
+      "mcp__chrome_devtools__take_snapshot",
+      "mcp__chrome_devtools__take_screenshot",
+      "mcp__chrome_devtools__evaluate_script",
+      "mcp__chrome_devtools__navigate_page",
+      "mcp__chrome_devtools__resize_page",
+      "mcp__chrome_devtools__hover",
+      "Bash(python -m http.server:*)",
+      "Bash(open http://localhost:8000/index.html)",
+      "Bash(open http://localhost:8000/portfolio.html)"
+    ]
+  }
+}

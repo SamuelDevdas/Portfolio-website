@@ -16,7 +16,9 @@
       "mcp__chrome_devtools__hover",
       "Bash(python -m http.server:*)",
       "Bash(open http://localhost:8000/index.html)",
-      "Bash(open http://localhost:8000/portfolio.html)"
+      "Bash(open http://localhost:8000/portfolio.html)",
+      "mcp__chrome_devtools__click",
+      "Bash(pkill:*)"
     ]
   }
 }

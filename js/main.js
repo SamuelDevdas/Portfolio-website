@@ -13,17 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ═══════════════════════════════════════════════════════════════════
     // Hero Slideshow - 4-Phase Visual Narrative
-    // GROUNDING → GROWTH → CLARITY → TRUST
-    // Subconscious psychological storytelling through image cycling
+    // ROOTS → CLIMB → INTERTWINE → HARVEST
+    // The TrueVine Metaphor: foundation → growth → partnership → results
     // ═══════════════════════════════════════════════════════════════════
     const heroSlides = document.querySelectorAll('.hero-slide');
     if (heroSlides.length > 0) {
         let currentSlide = 0;
         const totalSlides = heroSlides.length;
 
-        // Premium timing: 8 seconds per phase, 2.5s crossfade
-        // Full narrative cycle: 32 seconds (8s × 4 phases)
-        const slideInterval = 8000;
+        // Premium timing: 6 seconds per phase, 2.5s crossfade
+        // Full narrative cycle: 24 seconds (6s × 4 phases)
+        const slideInterval = 6000;
 
         function advanceSlide() {
             // Remove active from current

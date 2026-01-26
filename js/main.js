@@ -11,6 +11,37 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    // ═══════════════════════════════════════════════════════════════════
+    // Hero Slideshow - 4-Phase Visual Narrative
+    // GROUNDING → GROWTH → CLARITY → TRUST
+    // Subconscious psychological storytelling through image cycling
+    // ═══════════════════════════════════════════════════════════════════
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    if (heroSlides.length > 0) {
+        let currentSlide = 0;
+        const totalSlides = heroSlides.length;
+
+        // Premium timing: 8 seconds per phase, 2.5s crossfade
+        // Full narrative cycle: 32 seconds (8s × 4 phases)
+        const slideInterval = 8000;
+
+        function advanceSlide() {
+            // Remove active from current
+            heroSlides[currentSlide].classList.remove('active');
+
+            // Move to next slide (loop back to start)
+            currentSlide = (currentSlide + 1) % totalSlides;
+
+            // Add active to new slide
+            heroSlides[currentSlide].classList.add('active');
+        }
+
+        // Only auto-advance if user doesn't prefer reduced motion
+        if (!prefersReducedMotion) {
+            setInterval(advanceSlide, slideInterval);
+        }
+    }
+
     // Scroll-aware navigation background
     let scrollTicking = false;
     window.addEventListener('scroll', () => {

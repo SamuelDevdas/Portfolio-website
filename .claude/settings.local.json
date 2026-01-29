@@ -29,7 +29,11 @@
       "mcp__chrome_devtools__press_key",
       "mcp__chrome_devtools__close_page",
       "mcp__chrome_devtools__emulate",
-      "Bash(npx http-server -p 8080)"
+      "Bash(npx http-server -p 8080)",
+      "mcp__chrome_devtools__fill_form",
+      "mcp__chrome_devtools__wait_for",
+      "mcp__chrome_devtools__list_network_requests",
+      "mcp__chrome_devtools__get_network_request"
     ]
   }
 }

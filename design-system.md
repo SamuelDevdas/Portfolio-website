@@ -198,15 +198,17 @@ After implementation:
 
 ---
 
-*Document Version: 1.3 | Last updated: 2025-12-21*
+*Document Version: 1.4 | Last updated: 2026-01-29*
 
 ---
 
 ## Repository Structure (Modularized)
 
-- **`index.html`** — Clean semantic HTML structure
-- **`css/styles.css`** — All brand styles, theme logic, and animations (885 lines)
-- **`js/main.js`** — Interactive functionality: custom cursor, mobile nav, theme toggle, Web3Forms AJAX handler
+- **`index.html`** — Main landing page (TrueVine Insights company site)
+- **`portfolio.html`** — Samuel Devdas portfolio (AI Engineer)
+- **`abhishek-portfolio.html`** — Abhishek Devdas portfolio (Architect)
+- **`css/styles.css`** — All brand styles, theme logic, and animations
+- **`js/main.js`** — Interactive functionality: mobile nav, theme toggle, Web3Forms AJAX handler
 - **`logo/`** — Brand assets
 
 ## External Services
@@ -249,14 +251,103 @@ Before any addition:
 ### P1: Now
 
 - [x] **Hero scroll indicator** — Subtle chevron, `rgba(255,255,255,0.5)`, gentle float animation
+- [x] **Scroll indicators on all pages** — Added to portfolio.html and abhishek-portfolio.html
+- [x] **Mobile brand reinforcement** — "TVI" abbreviated text on mobile (≤480px)
+- [x] **Button border-radius** — Updated from 4px to 6px (softer, more premium)
 
 ### P2: Next
 
-- [ ] **Mobile responsiveness audit** — Test 375px, 390px, 768px, verify touch targets ≥44px
-- [ ] **Hamburger menu verification** — Ensure smooth open/close on all devices
+- [x] **Mobile responsiveness audit** — Tested 375px, hamburger menu working
+- [x] **Hamburger menu verification** — Smooth open/close confirmed
 
 ### P3: Later
 
 - [ ] **About section refinement** — Consider subtle background gradient or 2-column layout
 - [ ] **Case study content** — Real project showcase (needs content creation)
-- [ ] **Performance audit** — Lighthouse check, optimize video loading
+- [ ] **Performance audit** — Lighthouse check, optimize image loading
+
+---
+
+## Learnings & Patterns (Jan 2026)
+
+### Button Hierarchy Pattern
+
+Create visual hierarchy through **padding**, not font-size:
+
+| Type | Padding | Font | Use Case |
+|------|---------|------|----------|
+| Primary CTA | `0.7rem 1.6rem` | `0.85rem` | Hero buttons, main actions |
+| Secondary | `0.5rem 1rem` | `0.85rem` | Card buttons, in-section links |
+
+### Mobile Logo Pattern
+
+Maintain brand recognition on small screens:
+
+```css
+/* Desktop: Full brand name */
+.logo-text { display: block; }
+.logo-text-short { display: none; }
+
+/* Mobile: Abbreviated */
+@media (max-width: 480px) {
+    .logo-text { display: none; }
+    .logo-text-short { display: block; }
+}
+```
+
+HTML structure:
+```html
+<a class="nav-logo">
+    <img src="logo.png" alt="Logo">
+    <span class="logo-text">TrueVine Insights</span>
+    <span class="logo-text-short">TVI</span>
+</a>
+```
+
+### Navigation Architecture
+
+Different nav structures serve different purposes:
+
+**Main Site (index.html)**
+```
+About | Services | Testimonials | Insights | Team | Contact
+```
+- All anchor links to sections on same page
+- Logo links to `#` (top of page)
+
+**Portfolio Pages**
+```
+Home | Team | About | Skills | Projects | Contact
+```
+- "Home" and "Team" link back to main site
+- Other links are anchor links within portfolio
+- Logo links to `index.html` with title="Back to TrueVine Insights"
+
+### Scroll Indicator Placement
+
+Must be direct child of `<header>`, not inside nested divs:
+
+```html
+<header>
+    <div class="hero-slideshow">...</div>
+    <div class="o">...</div>
+    <!-- Correct: Direct child of header -->
+    <a href="#about" class="scroll-indicator">...</a>
+</header>
+```
+
+Reason: `position: absolute` finds nearest `position: relative` ancestor.
+
+### Contact Routing Pattern
+
+All portfolio pages funnel inquiries to main contact:
+
+```html
+<!-- On portfolio pages -->
+<a href="index.html#contact" class="btn">Start a Project</a>
+```
+
+Benefits:
+- Single point of contact management
+- Consistent brand experience
+- Clear business structure communication

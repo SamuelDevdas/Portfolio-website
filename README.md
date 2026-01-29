@@ -1,23 +1,31 @@
-# Portfolio Website
+# TrueVine Insights Website
 
-## 🌐 Live Demo
+## Live Site
 
 **[truevineinsights.ch](https://truevineinsights.ch)**
 
 ---
 
+## Pages
+
+- **index.html** — Main company landing page
+- **portfolio.html** — Samuel Devdas portfolio (AI Engineer)
+- **abhishek-portfolio.html** — Abhishek Devdas portfolio (Architect)
+
 ## Tech Stack
 
 - HTML, CSS, JavaScript (vanilla)
-- Hosted on **Netlify** with auto-deploy from GitHub
-- Contact form via **Netlify Forms**
+- Hosted on **GitHub Pages**
+- Contact form via **Web3Forms**
+- Domain: Infomaniak DNS → GitHub Pages
 
 ## Features
 
-- Responsive design (mobile-friendly)
-- Dark/light theme toggle
-- Animated scroll effects
-- Contact form with email notifications
+- Responsive design (mobile-first)
+- 4-phase hero slideshow
+- Glassmorphism cards
+- Mobile hamburger navigation with "TVI" abbreviated logo
+- Contact form with AJAX submission
 - Spam protection (honeypot)
 
 ## Local Development
@@ -30,20 +38,18 @@ npx http-server
 python -m http.server 8080
 ```
 
-## Updating Content
+## Design System
 
-Edit `index.html` directly, or use the YAML-based update system:
-
-```bash
-# Edit content in data/samuel-cv-content.yaml
-# Then run:
-uv run data/update_website.py
-```
+See `design-system.md` for:
+- Brand color tokens
+- Typography hierarchy
+- Button patterns
+- Learnings & patterns
 
 ## Deployment
 
-Push to `main` branch → Netlify auto-deploys.
+Push to `main` branch → GitHub Pages auto-deploys.
 
 ---
 
-**Samuel Devdas** • AI Engineer & Data Scientist • Switzerland
+**TrueVine Insights** • Production AI Systems

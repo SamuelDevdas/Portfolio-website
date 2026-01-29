@@ -57,7 +57,8 @@ Nav elements collide at extreme zoom. Prevent with:
 
 ## Key Files
 
-- `index.html` → Main landing page
-- `portfolio.html` → Founder portfolio
+- `index.html` → Main landing page (company site)
+- `portfolio.html` → Samuel Devdas portfolio (AI Engineer)
+- `abhishek-portfolio.html` → Abhishek Devdas portfolio (Architect)
 - `css/styles.css` → All styling
-- `design-system.md` → Design rules & roadmap
+- `design-system.md` → Design rules, patterns & roadmap

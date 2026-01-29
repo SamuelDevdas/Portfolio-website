@@ -28,7 +28,8 @@
       "Bash(pdftotext:*)",
       "mcp__chrome_devtools__press_key",
       "mcp__chrome_devtools__close_page",
-      "mcp__chrome_devtools__emulate"
+      "mcp__chrome_devtools__emulate",
+      "Bash(npx http-server -p 8080)"
     ]
   }
 }

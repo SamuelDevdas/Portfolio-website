@@ -18,7 +18,13 @@
       "Bash(open http://localhost:8000/index.html)",
       "Bash(open http://localhost:8000/portfolio.html)",
       "mcp__chrome_devtools__click",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Bash(gh api:*)",
+      "Bash(dig:*)",
+      "Bash(netlify status:*)",
+      "Bash(gh repo list:*)",
+      "WebFetch(domain:www.infomaniak.com)",
+      "WebFetch(domain:www.linkedin.com)"
     ]
   }
 }

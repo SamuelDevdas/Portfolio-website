@@ -7,7 +7,7 @@ hero:
   tagline: Production LLM Systems for Swiss Enterprises
   sub_tagline: Secure, reliable, cost-efficient AI — from scoping to deployment
   cta_primary:
-    text: Get Started
+    text: Book a Free Consultation
     link: "#contact"
   cta_secondary:
     text: Meet the Founder
@@ -16,7 +16,7 @@ hero:
 about:
   headline: AI That Works in Production
   lead: We deliver production AI and LLM systems focused on reliability, security, and cost control.
-  supporting: Founded in 2021, we've delivered AI solutions for HSLU, Pilatus Aircraft, JTI, and Collins Aerospace. Our systems include evaluation and regression checks to maintain quality over time — and we train your team for independent operation.
+  supporting: Founded in 2021, we've delivered AI solutions across research, semiconductor, and enterprise. Our systems include evaluation and regression checks to maintain quality over time — and we train your team for independent operation.
   trust_signals:
     - 34% improvement over baseline in AI research
     - Swiss B permit (immediate availability)
@@ -41,11 +41,6 @@ services:
     description: Stakeholder training, documentation, and handover for long-term independent operation. We build for handoff.
 
 testimonials:
-  - quote: "His thesis is excellently written and will potentially be published in a scientific journal... I highly recommend him as a valuable asset to any organization."
-    author: Prof. Guang Lu
-    role: Senior Data Scientist & AI Lecturer, HSLU
-    relationship: Thesis Supervisor
-
   - quote: "Samuel designed and implemented a full conversational agent pipeline, achieving a 34% improvement over baseline approaches... rare balance of technical competence and human-centred thinking."
     author: Alexandre de Spindler
     role: Computer Scientist and Teacher, HSLU
@@ -56,23 +51,25 @@ testimonials:
     role: Team Lead Aircraft Data & Analytics
     relationship: Manager at Pilatus Aircraft
 
+  - quote: "His thesis is excellently written and will potentially be published in a scientific journal... I highly recommend him as a valuable asset to any organization."
+    author: Prof. Guang Lu
+    role: Senior Data Scientist & AI Lecturer, HSLU
+    relationship: Thesis Supervisor & Client
+
 insights:
   headline: Insights & Articles
   description: Practical lessons from building production AI systems
   articles_url: https://www.linkedin.com/in/samueldevdas/recent-activity/articles/
   featured:
-    - title: "[Article Title 1]"
-      excerpt: "[Brief description of the article content]"
-      date: "[Publication date]"
-      url: "[LinkedIn article URL]"
-    - title: "[Article Title 2]"
-      excerpt: "[Brief description]"
-      date: "[Publication date]"
-      url: "[LinkedIn article URL]"
-    - title: "[Article Title 3]"
-      excerpt: "[Brief description]"
-      date: "[Publication date]"
-      url: "[LinkedIn article URL]"
+    - title: "When AI Rate Limits Hit Reality"
+      excerpt: "How rate limit optimization transforms AI system reliability and cost efficiency in production."
+      url: "https://www.linkedin.com/in/samueldevdas/recent-activity/articles/"  # update with direct article URL when available
+    - title: "How to Avoid Implementation Failures"
+      excerpt: "Why implementation planning is the difference between AI projects that ship and ones that stall."
+      url: "https://www.linkedin.com/in/samueldevdas/recent-activity/articles/"  # update with direct article URL when available
+    - title: "Before It Checked, It Judged"
+      excerpt: "How bias and framing shape AI outputs before any verification happens — and what to do about it."
+      url: "https://www.linkedin.com/in/samueldevdas/recent-activity/articles/"  # update with direct article URL when available
 
 team:
   founder:
@@ -88,7 +85,7 @@ team:
       - MEng Advanced Materials Manufacturing & Design (Ottawa)
       - Microsoft Certified: Security, Compliance & Identity
       - Azure AI Engineer Associate (in progress)
-    summary: AI Engineer specializing in production LLM systems (retrieval, agents, evaluation). Delivered AI solutions for HSLU, Pilatus Aircraft, JTI, and Collins Aerospace. Focus on reliability, security, and cost control with evaluation-driven iteration.
+    summary: AI Engineer specializing in production LLM systems (retrieval, agents, evaluation). Delivered AI solutions across research, semiconductor, and enterprise. Focus on reliability, security, and cost control with evaluation-driven iteration.
     highlight: '"34% improvement over baseline... rare balance of technical competence and human-centred thinking" — Alexandre de Spindler, HSLU'
     portfolio_link: portfolio.html
     linkedin: https://www.linkedin.com/in/samueldevdas/
@@ -98,7 +95,7 @@ contact:
   headline: Let's Build Your AI Solution
   lead: Whether you need a production LLM system, data pipeline, or team training, we're here to help. Swiss B permit holder — immediate start available.
   location: Amriswil, Switzerland
-  email: SamuelDevdas01@gmail.com
+  email: samuel@truevineinsights.ch
   phone: +41 77 448 8108
   linkedin: https://www.linkedin.com/in/samueldevdas
 

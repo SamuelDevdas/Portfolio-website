@@ -900,9 +900,18 @@
             margin-inline: auto;
         }
 
-        /* Insights Section placeholder styling */
+        /* Insights Section */
+        #insights .card {
+            display: flex;
+            flex-direction: column;
+        }
+
         #insights .card h3 {
             color: var(--gold);
+        }
+
+        #insights .card > p:last-child {
+            margin-top: auto;
         }
 
         @media(max-width:768px) {

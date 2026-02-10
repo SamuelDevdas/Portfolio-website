@@ -257,6 +257,35 @@ def update_contact_section(html_content, content):
     
     return html_content
 
+def update_insights_section(html_content, content):
+    """Update insights section from YAML articles list"""
+    insights = content.get('insights', {})
+    if not insights:
+        return html_content
+
+    articles = insights.get('featured', [])
+    headline = insights.get('headline', 'Insights & Articles')
+    description = insights.get('description', '')
+
+    cards_html = ""
+    for article in articles:
+        cards_html += f'''                <div class="card">
+                    <h3>{article["title"]}</h3>
+                    <p>{article["excerpt"]}</p>
+                    <p style="margin-top:.8rem"><a href="{article["url"]}" target="_blank" rel="noopener" class="btn" style="padding:.5rem 1rem;font-size:.85rem">Read Article</a></p>
+                </div>
+'''
+
+    section_html = f'''<section id="insights">
+            <h2>{headline}</h2>
+            <p style="text-align:center;margin-bottom:2rem;opacity:0.8">{description}</p>
+            <div class="grid grid--center">
+{cards_html}            </div>
+        </section>'''
+
+    pattern = r'<section id="insights">.*?</section>'
+    return re.sub(pattern, section_html, html_content, flags=re.DOTALL)
+
 def update_footer(html_content, content):
     """Update footer content"""
     html_content = re.sub(
@@ -308,6 +337,9 @@ def main():
         print("🔄 Updating volunteering section...")
         html_content = update_volunteering_section(html_content, content)
         
+        print("🔄 Updating insights section...")
+        html_content = update_insights_section(html_content, content)
+
         print("🔄 Updating contact section...")
         html_content = update_contact_section(html_content, content)
         

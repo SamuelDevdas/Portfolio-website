@@ -327,7 +327,7 @@ contact:
   headline: Let's Build Your AI Solution
   lead: Whether you need a production LLM system, data pipeline, or team training, we're here to help. Swiss B permit holder — immediate start available.
   location: Amriswil, Switzerland
-  email: SamuelDevdas01@gmail.com
+  email: samuel@truevineinsights.ch
   phone: +41 77 448 8108
   linkedin: https://www.linkedin.com/in/samueldevdas
 

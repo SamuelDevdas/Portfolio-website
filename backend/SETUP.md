@@ -20,7 +20,7 @@
 
 - **Method**: Netlify Forms
 - **Form name**: `consultation`
-- **Notifications**: Email to SamuelDevdas01@gmail.com
+- **Notifications**: Email to samuel@truevineinsights.ch
 - **Spam protection**: Honeypot field enabled
 
 ## Key Files

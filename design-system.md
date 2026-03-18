@@ -230,11 +230,11 @@ Elements that enhance without cluttering:
 
 ### Project Card Diagrams
 
-Animated architecture diagrams on portfolio project cards using Manim-generated GIFs:
+Animated architecture diagrams on portfolio project cards using Manim-generated MP4 videos:
 
-- **Style**: Dark background (#0e0e0e), teal strokes (#018488), line-art only
-- **Format**: Optimized looping GIF, < 500KB, 240px wide
-- **Display**: `.card-diagram` wrapper above card text, 0.7 opacity → 0.9 on hover
+- **Style**: Dark background (#0e0e0e), teal strokes (#018488), StealthTip arrowheads, line-art only
+- **Format**: Looping MP4 video, < 100KB, 640x480 native resolution
+- **Display**: `.card-diagram` wrapper with `<video autoplay loop muted playsinline>`, 0.7 opacity → 0.9 on hover
 - **Content**: Abstract architecture (3-5 nodes) derived from actual project codebase, anonymized
 - **Skill**: Use `portfolio-diagram` skill for generation
 - **Assets**: `assets/diagrams/` directory

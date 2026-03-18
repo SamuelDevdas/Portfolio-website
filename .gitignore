@@ -12,3 +12,9 @@ logo/scale-*.png
 logo/zoom-*.png
 data/abhishek-devdas-profile-docs
 test-screenshots
+
+# Manim render artifacts
+media/
+
+# Old GIF diagrams (replaced by MP4)
+assets/diagrams/*.gif

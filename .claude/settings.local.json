@@ -33,7 +33,8 @@
       "mcp__chrome_devtools__fill_form",
       "mcp__chrome_devtools__wait_for",
       "mcp__chrome_devtools__list_network_requests",
-      "mcp__chrome_devtools__get_network_request"
+      "mcp__chrome_devtools__get_network_request",
+      "Bash(git commit:*)"
     ]
   }
 }

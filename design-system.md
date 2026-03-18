@@ -228,6 +228,17 @@ Elements that enhance without cluttering:
 - **Scroll indicators** — Subtle navigation cues (low opacity, gentle animation)
 - **Micro-interactions** — Purposeful feedback on hover/focus states
 
+### Project Card Diagrams
+
+Animated architecture diagrams on portfolio project cards using Manim-generated GIFs:
+
+- **Style**: Dark background (#0e0e0e), teal strokes (#018488), line-art only
+- **Format**: Optimized looping GIF, < 500KB, 240px wide
+- **Display**: `.card-diagram` wrapper above card text, 0.7 opacity → 0.9 on hover
+- **Content**: Abstract architecture (3-5 nodes) derived from actual project codebase, anonymized
+- **Skill**: Use `portfolio-diagram` skill for generation
+- **Assets**: `assets/diagrams/` directory
+
 ### What We Avoid
 
 Elements rejected to preserve minimalism:

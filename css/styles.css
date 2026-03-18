@@ -533,6 +533,24 @@
             color: var(--glass-txt)
         }
 
+        .card-diagram {
+            margin: 0 0 1.2rem 0;
+            line-height: 0;
+            border-radius: 10px;
+            overflow: hidden
+        }
+
+        .card-diagram img {
+            width: 100%;
+            height: auto;
+            opacity: .7;
+            transition: opacity .4s
+        }
+
+        .card:hover .card-diagram img {
+            opacity: .9
+        }
+
         /* About/Profile readability tweaks (markup unchanged for YAML updates) */
         #about .card {
             max-width: 1000px;

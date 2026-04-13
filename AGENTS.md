@@ -1,5 +1,7 @@
 # Agent Guide (Codex/Claude)
 
+> **Golden Rule:** Never rewrite this file from memory. When restructuring or bulk-editing, `git diff` section-by-section before committing to verify zero content loss.
+
 Purpose: Persistent rules for any AI assistant working in this repo. Follow these to keep the site maintainable and the YAML→HTML pipeline reliable.
 
 Scope: Entire repository.
@@ -84,6 +86,20 @@ Local Dev & Preview
 Performance & Responsiveness
 - Keep CSS solutions lightweight; test desktop, ≤768px, and ≤480px.
 - Use CSS variables already defined for theming; don’t introduce duplicate colors.
+
+Cross-Pollinated Rules
+- Check framework built-ins and official docs before writing custom code or custom JS. Prefer the platform, browser APIs, and existing site patterns over new abstractions.
+- Two strikes rule: if the same bug survives two fix attempts, stop and delegate to Codex CLI for a fresh pass instead of patching blindly.
+- Each piece of information lives in ONE place. Keep design intent in `design-system.md`, content in YAML/data files, and implementation details in code.
+- After any bulk update to a rules or design document, re-read every line against the current site state. Don't rely on keyword search.
+- Clean up worktrees at session end and verify with `git worktree list`.
+- All network calls must have an explicit timeout path. For browser `fetch`, use `AbortController`; don't let form submissions or asset probes hang forever.
+- Full dev loop before claiming done: implement → verify in browser → build/regenerate outputs where relevant → check linked assets/paths → commit.
+- When changing how generated assets are produced (animation filenames, output paths, media formats), update the consumers that reference them in HTML/JS/CSS in the same step. Producers and consumers must stay in sync.
+
+Rules File Maintenance
+- Mirror CLAUDE.md and AGENTS.md edits in the same step. Never batch-sync later.
+- Never edit CLAUDE.md or AGENTS.md without explicit user approval. Propose changes first, then edit after approval.
 
 Precedence & Scope
 - AGENTS.md governs agent behavior repo-wide and overrides CLAUDE.md where rules conflict (e.g., HTML allowed in YAML in CLAUDE.md vs. YAML text-only here).
